@@ -15,7 +15,7 @@ const FOOTER_DIVISIONS = [
 
 const CONTACT_DETAILS = {
   phone: "+1 888-546-9913",
-  email: "contact@big8integrated.com",
+  email: "contact@big8intergrated.com",
   address: "1920 Rankin Rd, Ste 145, Houston, TX 77073",
 };
 
@@ -33,13 +33,13 @@ function Footer() {
             <Link href="/" className="flex items-center gap-2.5">
               <Image
                 src="/images/brand/logo.png"
-                alt="Big 8 Integrated, LLC"
+                alt="Big 8 intergrated, LLC"
                 width={28}
                 height={28}
                 className="h-7 w-7"
               />
               <span className="font-display text-paper text-base font-semibold">
-                Big 8 Integrated
+                Big 8 intergrated
               </span>
             </Link>
 
@@ -132,7 +132,7 @@ function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-paper/10 text-paper/50 flex flex-col gap-3 border-t py-6 text-xs sm:flex-row sm:items-center sm:justify-between">
-          <p>&copy; {year} Big 8 Integrated, LLC. All rights reserved.</p>
+          <p>&copy; {year} Big 8 Intergrated, LLC. All rights reserved.</p>
 
           <div className="flex items-center gap-4">
             <p>Houston, Texas, USA</p>
