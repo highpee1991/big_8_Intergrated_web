@@ -7,9 +7,10 @@ import { Button } from "@/components/ui/button";
 
 export interface ComingSoonProps {
   title: string;
+  description?: string;
 }
 
-function ComingSoon({ title }: ComingSoonProps) {
+function ComingSoon({ title, description }: ComingSoonProps) {
   return (
     <main id="main-content" className="flex flex-1 flex-col">
       <Section spacing="lg" className="flex flex-1 items-center">
@@ -21,8 +22,11 @@ function ComingSoon({ title }: ComingSoonProps) {
           <span className="text-accent font-mono text-xs tracking-widest uppercase">
             This page is under maintenance. We&apos;re working on it, check back soon.
           </span>
+          {description ? (
+            <p className="text-muted max-w-md text-sm">{description}</p>
+          ) : null}
 
-          <Button asChild  className="mt-2">
+          <Button asChild className="mt-2">
             <Link href="/">
               <ArrowLeft className="size-4" aria-hidden="true" />
               Back to home
