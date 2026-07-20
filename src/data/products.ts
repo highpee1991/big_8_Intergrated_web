@@ -61,7 +61,7 @@ export const products: Product[] = [
     slug: "optican",
     title: "Optiscan",
     category: "Medical Equipment",
-    imageSrc: "/images/products/Optiscan.png",
+    imageSrc: "/images/products/optiscan.png",
     imageAlt: "manitou-forklift",
     divisionSlug: "optiscan",
   },
