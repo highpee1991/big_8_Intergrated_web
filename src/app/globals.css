@@ -1,0 +1,210 @@
+@import "tailwindcss";
+@import "../styles/fonts.css";
+
+:root {
+  /* --- Color: neutrals --- */
+  --color-ink: #12161c;          /* primary text, dark surfaces */
+  --color-paper: #f7f6f2;        /* page background */
+  --color-surface: #ffffff;      /* elevated panels above paper */
+  --color-card: #ffffff;         /* card background */
+  --color-border: #e4e2dc;       /* hairline borders/dividers */
+  --color-muted: #5b6572;        /* secondary/tertiary text */
+
+  
+  --color-primary: #1e4fd1;      /* deepened logo blue */
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #3d4a5c;    /* neutral structural slate (not brand-derived) */
+  --color-secondary-foreground: #ffffff;
+  --color-accent: #227081;       /* the logo's green→blue seam blend — the "interlock" */
+  --color-accent-foreground: #ffffff;
+  --color-accent-on-dark: #2e96ac; /* same seam hue, undeepened — the deepened value
+                                       only clears AA (4.5:1) on light surfaces; this
+                                       is for text/labels on --color-ink backgrounds */
+  --color-success: #0f7a3c;      /* deepened logo green */
+  --color-warning: #9c6a00;      /* deepened logo amber */
+  --color-danger: #d6362e;       /* deepened logo red */
+
+  --brand-blue: #3279ff;
+  --brand-red: #f64038;
+  --brand-amber: #ffba0a;
+  --brand-green: #2bb258;
+
+  /* --- Typography --- */
+  --font-display: "Space Grotesk Variable", "Space Grotesk", ui-sans-serif, sans-serif;
+  --font-body: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* --- Radius: precise, not playful --- */
+  --radius-sm: 0.375rem;   /* 6px  — inputs, small badges */
+  --radius-md: 0.5rem;     /* 8px  — buttons, cards */
+  --radius-lg: 0.75rem;    /* 12px — large panels, modals */
+  --radius-pill: 999px;    /* tags, status pills only */
+
+  /* --- Shadow: one soft ambient elevation, used sparingly --- */
+  --shadow-sm: 0 1px 2px rgba(18, 22, 28, 0.06);
+  --shadow-md: 0 4px 16px rgba(18, 22, 28, 0.08);
+  --shadow-lg: 0 12px 32px rgba(18, 22, 28, 0.10);
+
+
+  --color-focus-ring: var(--color-primary);
+
+  /* --- Motion: motion should whisper --- */
+  --duration-fast: 150ms;
+  --duration-base: 250ms;
+  --duration-slow: 450ms;
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* --- Layout --- */
+  --container-content: 80rem;  /* 1280px */
+  --container-wide: 90rem;     /* 1440px */
+  --measure: 65ch;             /* prose line length */
+}
+
+
+
+@theme {
+  --color-ink: var(--color-ink);
+  --color-paper: var(--color-paper);
+  --color-surface: var(--color-surface);
+  --color-card: var(--color-card);
+  --color-border: var(--color-border);
+  --color-muted: var(--color-muted);
+
+  --color-primary: var(--color-primary);
+  --color-primary-foreground: var(--color-primary-foreground);
+  --color-secondary: var(--color-secondary);
+  --color-secondary-foreground: var(--color-secondary-foreground);
+  --color-accent: var(--color-accent);
+  --color-accent-foreground: var(--color-accent-foreground);
+  --color-accent-on-dark: var(--color-accent-on-dark);
+  --color-success: var(--color-success);
+  --color-warning: var(--color-warning);
+  --color-danger: var(--color-danger);
+
+  --color-brand-blue: var(--brand-blue);
+  --color-brand-red: var(--brand-red);
+  --color-brand-amber: var(--brand-amber);
+  --color-brand-green: var(--brand-green);
+
+  /* shadcn/ui expects these semantic names too */
+  --color-background: var(--color-paper);
+  --color-foreground: var(--color-ink);
+
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+  --font-mono: var(--font-mono);
+
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-pill: var(--radius-pill);
+
+  --shadow-sm: var(--shadow-sm);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+
+  --container-content: var(--container-content);
+  --container-wide: var(--container-wide);
+}
+
+/* ============================================================
+   Base element styles
+   ============================================================ */
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: white;
+}
+
+/* Visible focus state everywhere — WCAG requirement, never remove */
+:focus-visible {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 2px;
+}
+
+
+.bg-ink {
+  --color-focus-ring: #ffffff;
+}
+
+* {
+  scrollbar-color: var(--color-secondary) var(--color-paper);
+}
+
+
+@keyframes hero-rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-glow-drift {
+  0%, 100% {
+    transform: translate(-4%, -2%) scale(1);
+  }
+  50% {
+    transform: translate(4%, 3%) scale(1.08);
+  }
+}
+
+@keyframes hero-ring-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-hero-rise-in {
+  animation: hero-rise-in 0.7s var(--ease-standard) both;
+}
+
+.animate-hero-glow-drift {
+  animation: hero-glow-drift 14s ease-in-out infinite;
+}
+
+.animate-hero-ring-spin {
+  animation: hero-ring-spin 22s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee var(--marquee-duration, 30s) linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+  }
+}

@@ -1,0 +1,17 @@
+/**
+ * Self-hosted fonts (npm-distributed via @fontsource, not Google Fonts CDN).
+ * Only the weights actually used by the type scale are imported, to keep
+ * the shipped font payload small.
+ */
+
+/* Space Grotesk — display face (headlines, section titles) */
+@import "@fontsource-variable/space-grotesk/wght.css";
+
+/* IBM Plex Sans — body face */
+@import "@fontsource/ibm-plex-sans/latin-400.css";
+@import "@fontsource/ibm-plex-sans/latin-500.css";
+@import "@fontsource/ibm-plex-sans/latin-600.css";
+
+/* IBM Plex Mono — utility face (specs, data, labels, nav eyebrows) */
+@import "@fontsource/ibm-plex-mono/latin-400.css";
+@import "@fontsource/ibm-plex-mono/latin-500.css";
