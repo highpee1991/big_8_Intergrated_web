@@ -6,17 +6,51 @@ export interface Division {
   name: string;
   description: string;
   icon: LucideIcon;
+  categories?: Category[]; // populated only where a query asks for it (e.g. nav)
 }
 
-export interface Product {
+export interface Category {
   id: string;
   slug: string;
-  title: string;
-  category: string;
-  imageSrc: string;
-  imageAlt: string;
-  divisionSlug?: string;
+  name: string;
+  divisionSlug: string;
+  divisionName: string;
 }
+
+export interface ProductImage {
+  url: string;
+  alt: string;
+}
+
+export interface ProductBrand {
+  slug: string;
+  name: string;
+  logoUrl: string;
+}
+
+// Lightweight shape for cards/grids — every product listing page uses this.
+export interface ProductSummary {
+  id: string;
+  slug: string; // -> /products/{slug}
+  title: string;
+  summary: string;
+  image: ProductImage; // primary (first) image
+  priceLabel: string; // pre-formatted; "Contact us for pricing" when no price is set
+  divisionSlug: string;
+  divisionName: string;
+  categorySlug?: string;
+  categoryName?: string;
+}
+
+// Full shape for a single product detail page — everything ProductSummary
+// has, plus the gallery, specs, description, and brand.
+export interface ProductDetail extends ProductSummary {
+  description: string | null;
+  images: ProductImage[];
+  specs: Record<string, string> | null;
+  brand: ProductBrand | null;
+}
+
 
 export interface Brand {
   id: string;
