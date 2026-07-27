@@ -5,10 +5,10 @@ import { SectionHeader } from "@/components/common/section-header";
 import { Reveal } from "@/components/common/reveal";
 import { ProductCard } from "@/components/cards/product-card";
 import { Button } from "@/components/ui/button";
-import type { Product } from "@/types/content";
+import type { ProductSummary } from "@/types/content";
 
 export interface FeaturedProductsSectionProps {
-  products: Product[];
+  products: ProductSummary[];
 }
 
 function FeaturedProductsSection({ products }: FeaturedProductsSectionProps) {
@@ -35,13 +35,7 @@ function FeaturedProductsSection({ products }: FeaturedProductsSectionProps) {
       <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {products.map((product, i) => (
           <Reveal key={product.id} delay={Math.min(i * 0.08, 0.3)}>
-            <ProductCard
-              title={product.title}
-              category={product.category}
-              imageSrc={product.imageSrc}
-              imageAlt={product.imageAlt}
-              accentIndex={i}
-            />
+            <ProductCard product={product} accentIndex={i} />
           </Reveal>
         ))}
       </div>
