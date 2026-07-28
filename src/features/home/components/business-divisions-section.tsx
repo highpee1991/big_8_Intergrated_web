@@ -25,6 +25,7 @@ function BusinessDivisionsSection({ divisions }: BusinessDivisionsSectionProps) 
               icon={division.icon}
               title={division.name}
               description={division.description}
+              href={`/industries/${division.slug}`}
               accentIndex={i}
             />
           </Reveal>

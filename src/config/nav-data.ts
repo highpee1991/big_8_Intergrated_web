@@ -59,7 +59,7 @@ export const NAV_LINKS: NavLink[] = [
       items: [
         {
           label: "Oil & Gas",
-          href: "/industries/oil-gas",
+          href: "/industries/oil-gas-equipment",
           description: "Equipment & field solutions",
           icon: Fuel,
         },
@@ -77,7 +77,7 @@ export const NAV_LINKS: NavLink[] = [
         },
         {
           label: "IT",
-          href: "/industries/it",
+          href: "/industries/information-technology",
           description: "Infrastructure & technology",
           icon: Cpu,
         },

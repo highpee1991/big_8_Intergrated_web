@@ -78,3 +78,31 @@ export async function getCategoryBySlug(slug: string): Promise<Category | undefi
     divisionName: row.division.name,
   };
 }
+
+// Powers /industries/[slug] — one division plus its categories (if any),
+// e.g. Oil & Gas -> [Valves, Actuators, Welding Material]. More efficient
+// than fetching all divisions when only one is needed.
+export async function getDivisionWithCategoriesBySlug(
+  slug: string,
+): Promise<Division | undefined> {
+  const row = await prisma.division.findUnique({
+    where: { slug },
+    include: { categories: { orderBy: { sortOrder: "asc" } } },
+  });
+  if (!row) return undefined;
+
+  return {
+    id: row.id,
+    slug: row.slug,
+    name: row.name,
+    description: row.description,
+    icon: resolveIcon(row.icon),
+    categories: row.categories.map((c) => ({
+      id: c.id,
+      slug: c.slug,
+      name: c.name,
+      divisionSlug: row.slug,
+      divisionName: row.name,
+    })),
+  };
+}

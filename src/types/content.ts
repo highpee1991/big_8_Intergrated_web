@@ -77,6 +77,10 @@ export interface CompanyInfo {
   state: string;
   country: string;
   description: string;
+  tagline: string;
+  story: string;
+  mission: string;
+  coreArea: string;
   stats: CompanyStat[];
 }
 
