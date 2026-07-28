@@ -116,13 +116,13 @@ export const NAV_LINKS: NavLink[] = [
       items: [
         {
           label: "Oil & Gas",
-          href: "/products/oil-gas",
+          href: "/products/oil-gas-equipment",
           description: "Field equipment & flow control",
           icon: Fuel,
           children: [
-            { label: "Valves", href: "/products/oil-gas/valves" },
-            { label: "Actuators", href: "/products/oil-gas/actuators" },
-            { label: "Welding Material", href: "/products/oil-gas/welding-material" },
+            { label: "Valves", href: "/products/oil-gas-equipment/valves" },
+            { label: "Actuators", href: "/products/oil-gas-equipment/actuators" },
+            { label: "Welding Material", href: "/products/oil-gas-equipment/welding-material" },
           ],
         },
         {
@@ -134,38 +134,38 @@ export const NAV_LINKS: NavLink[] = [
             { label: "Forklifts", href: "/products/heavy-equipment/forklifts" },
             {
               label: "Industrial Generators",
-              href: "/products/heavy-equipment/generators",
+              href: "/products/heavy-equipment/industrial-generators",
             },
             { label: "Tractors", href: "/products/heavy-equipment/tractors" },
           ],
         },
         {
           label: "Medical Equipment",
-          href: "/products/medical-equipment",
+          href: "/products/medical",
           description: "Clinical & diagnostic gear",
           icon: HeartPulse,
         },
         {
           label: "Industrial Parts",
-          href: "/products/industrial-parts",
+          href: "/products/industrial",
           description: "Components & replacements",
           icon: Cog,
         },
         {
           label: "IT Hardware",
-          href: "/products/it-hardware",
+          href: "/products/information-technology",
           description: "Servers, networking & devices",
           icon: MonitorSmartphone,
         },
         {
           label: "Safety Equipment",
-          href: "/products/safety-equipment",
+          href: "/products",
           description: "PPE & site safety gear",
           icon: ShieldCheck,
         },
         {
           label: "Custom Procurement",
-          href: "/products/custom-procurement",
+          href: "/products/other",
           description: "Sourced to your spec",
           icon: ClipboardList,
         },

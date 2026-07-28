@@ -7,7 +7,7 @@
 // keeps working unchanged.
 import { prisma } from "@/lib/prisma";
 import { resolveIcon } from "@/lib/icon-map";
-import type { Division } from "@/types/content";
+import type { Division, Category } from "@/types/content";
 
 export async function getDivisions(): Promise<Division[]> {
   const rows = await prisma.division.findMany({
@@ -60,4 +60,21 @@ export async function getDivisionsWithCategories(): Promise<Division[]> {
       divisionName: d.name,
     })),
   }));
+}
+
+// Powers /products/[division]/[category] listing pages.
+export async function getCategoryBySlug(slug: string): Promise<Category | undefined> {
+  const row = await prisma.category.findUnique({
+    where: { slug },
+    include: { division: { select: { slug: true, name: true } } },
+  });
+  if (!row) return undefined;
+
+  return {
+    id: row.id,
+    slug: row.slug,
+    name: row.name,
+    divisionSlug: row.division.slug,
+    divisionName: row.division.name,
+  };
 }

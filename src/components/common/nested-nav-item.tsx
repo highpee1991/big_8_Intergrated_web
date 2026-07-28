@@ -110,7 +110,7 @@ function NestedNavItem({ item, variant, depth = 0, onNavigate }: NestedNavItemPr
                 className="border-border mt-2 flex flex-col gap-0.5 overflow-hidden border-t pt-2"
               >
                 {item.children!.map((child) => (
-                  <li key={child.href}>
+                  <li key={child.label}>
                     <Link
                       href={child.href}
                       onClick={onNavigate}
@@ -180,7 +180,7 @@ function NestedNavItem({ item, variant, depth = 0, onNavigate }: NestedNavItemPr
             >
               {item.children!.map((child) => (
                 <NestedNavItem
-                  key={child.href}
+                  key={child.label}
                   item={child}
                   variant="list"
                   depth={depth + 1}

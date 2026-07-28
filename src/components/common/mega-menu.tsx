@@ -38,7 +38,7 @@ function MegaMenu({ heading, href, items, onNavigate }: MegaMenuProps) {
         <div className="grid grid-cols-2 gap-1 p-3 sm:grid-cols-3">
           {items.map((item) => (
             <NestedNavItem
-              key={item.href}
+              key={item.label}
               item={item}
               variant="card"
               onNavigate={onNavigate}
