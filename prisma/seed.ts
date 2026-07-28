@@ -131,16 +131,13 @@ const products = [
     images: [{ url: "/images/products/ethernet_fiber.png", alt: "Ethernet fiber cabling" }],
   },
   {
-    slug: "ethernet-fiber",
-    title: "A large wooden spool (cable reel) loaded with thick, gray cable wound into many neat vertical coils.",
-    summary: "Several stripped gray cables with exposed multicolored inner wires resting on the workbench, accompanied by small text labels (e.g., specifying cable types or gauges).",
+    slug: "ethernet-cable",
+    title: "Ethernet Cable",
+    summary: "Stripped networking cable with multi-conductor gauge options for enterprise wiring.",
     description:
-      "Low-hour 2022 Manitou MT1840A telehandler with integrated fire suppression, an underground brake configuration, and a spare tire included.",
-    
+      "A large wooden spool (cable reel) loaded with thick, gray cable wound into many neat vertical coils, along with stripped cable segments showing exposed multicolored inner wires — available with labeled cable types and gauges to match your infrastructure needs.",
     divisionSlug: "information-technology",
-    images: [
-      { url: "/images/products/ethernet_cable.png", alt: "ethernet cable" },
-    ],
+    images: [{ url: "/images/products/ethernet_cable.png", alt: "Ethernet cable reel" }],
   },
   {
     slug: "generator",
