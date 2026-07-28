@@ -131,6 +131,18 @@ const products = [
     images: [{ url: "/images/products/ethernet_fiber.png", alt: "Ethernet fiber cabling" }],
   },
   {
+    slug: "ethernet-fiber",
+    title: "A large wooden spool (cable reel) loaded with thick, gray cable wound into many neat vertical coils.",
+    summary: "Several stripped gray cables with exposed multicolored inner wires resting on the workbench, accompanied by small text labels (e.g., specifying cable types or gauges).",
+    description:
+      "Low-hour 2022 Manitou MT1840A telehandler with integrated fire suppression, an underground brake configuration, and a spare tire included.",
+    
+    divisionSlug: "information-technology",
+    images: [
+      { url: "/images/products/ethernet_cable.png", alt: "ethernet cable" },
+    ],
+  },
+  {
     slug: "generator",
     title: "Generator",
     summary: "Industrial power generators for continuous or backup power.",
@@ -271,10 +283,9 @@ const products = [
     categorySlug: "forklifts",
     brandSlug: "yale",
     images: [
-      { url: "/images/products/picker1.jpg", alt: "Yale electric order picker" },
-      { url: "/images/products/picker2.jpg", alt: "Yale electric order picker" },
-      { url: "/images/products/picker3.jpg", alt: "Yale electric order picker" },
-      { url: "/images/products/picker4.jpg", alt: "Yale electric order picker" },
+      { url: "/images/products/picker1.png", alt: "Yale electric order picker" },
+      { url: "/images/products/picker2.png", alt: "Yale electric order picker" },
+      { url: "/images/products/picker3.png", alt: "Yale electric order picker" },
     ],
   },
   {
@@ -295,9 +306,9 @@ const products = [
     brandSlug: "hangcha",
     images: [
       { url: "/images/products/hangcha1.jpeg", alt: "Hangcha CPCD30 diesel forklift" },
-      { url: "/images/products/hangcha2.jpeg", alt: "Hangcha CPCD30 diesel forklift" },
-      { url: "/images/products/hangcha3.jpeg", alt: "Hangcha CPCD30 diesel forklift" },
-      { url: "/images/products/hangcha4.jpeg", alt: "Hangcha CPCD30 diesel forklift" },
+      { url: "/images/products/hangcha2.png", alt: "Hangcha CPCD30 diesel forklift" },
+      { url: "/images/products/hangcha3.png", alt: "Hangcha CPCD30 diesel forklift" },
+      { url: "/images/products/hangcha4.png", alt: "Hangcha CPCD30 diesel forklift" },
     ],
   },
   {
@@ -317,13 +328,9 @@ const products = [
     categorySlug: "forklifts",
     brandSlug: "hangcha",
     images: [
-      { url: "/images/products/hangchaCPYD501.jpg", alt: "Hangcha CPYD50 LPG forklift" },
-      { url: "/images/products/hangchaCPYD502.jpg", alt: "Hangcha CPYD50 LPG forklift" },
-      { url: "/images/products/hangchaCPYD503.jpg", alt: "Hangcha CPYD50 LPG forklift" },
-      { url: "/images/products/hangchaCPYD504.jpg", alt: "Hangcha CPYD50 LPG forklift" },
-      { url: "/images/products/hangchaCPYD505.jpg", alt: "Hangcha CPYD50 LPG forklift" },
-      { url: "/images/products/hangchaCPYD506.jpg", alt: "Hangcha CPYD50 LPG forklift" },
-      { url: "/images/products/hangchaCPYD507.jpg", alt: "Hangcha CPYD50 LPG forklift" },
+      { url: "/images/products/hangchaCPYD501.png", alt: "Hangcha CPYD50 LPG forklift" },
+      { url: "/images/products/hangchaCPYD502.png", alt: "Hangcha CPYD50 LPG forklift" },
+      { url: "/images/products/hangchaCPYD503.png", alt: "Hangcha CPYD50 LPG forklift" },
     ],
   },
 
@@ -417,10 +424,9 @@ const products = [
     categorySlug: "industrial-generators",
     brandSlug: "generac",
     images: [
-      { url: "/images/products/gen1.jpg", alt: "Generac 10kW standby generator" },
-      { url: "/images/products/gen2.jpg", alt: "Generac 10kW standby generator" },
-      { url: "/images/products/gen3.jpg", alt: "Generac 10kW standby generator" },
-      { url: "/images/products/gen4.jpg", alt: "Generac 10kW standby generator" },
+      { url: "/images/products/gen1.png", alt: "Generac 10kW standby generator" },
+      { url: "/images/products/gen2.png", alt: "Generac 10kW standby generator" },
+      { url: "/images/products/gen3.png", alt: "Generac 10kW standby generator" },
     ],
   },
   {
@@ -445,10 +451,9 @@ const products = [
     categorySlug: "industrial-generators",
     brandSlug: "generac",
     images: [
-      { url: "/images/products/gen1.jpg", alt: "Generac 10kW standby generator with transfer switch" },
-      { url: "/images/products/gen2.jpg", alt: "Generac 10kW standby generator with transfer switch" },
-      { url: "/images/products/gen3.jpg", alt: "Generac 10kW standby generator with transfer switch" },
-      { url: "/images/products/gen4.jpg", alt: "Generac 10kW standby generator with transfer switch" },
+      { url: "/images/products/gen1.png", alt: "Generac 10kW standby generator with transfer switch" },
+      { url: "/images/products/gen2.png", alt: "Generac 10kW standby generator with transfer switch" },
+      { url: "/images/products/gen3.png", alt: "Generac 10kW standby generator with transfer switch" },
     ],
   },
   {
@@ -476,10 +481,9 @@ const products = [
     categorySlug: "industrial-generators",
     brandSlug: "generac",
     images: [
-      { url: "/images/products/gen1.jpg", alt: "Generac 22kW standby generator" },
-      { url: "/images/products/gen2.jpg", alt: "Generac 22kW standby generator" },
-      { url: "/images/products/gen3.jpg", alt: "Generac 22kW standby generator" },
-      { url: "/images/products/gen4.jpg", alt: "Generac 22kW standby generator" },
+      { url: "/images/products/gen1.png", alt: "Generac 22kW standby generator" },
+      { url: "/images/products/gen2.png", alt: "Generac 22kW standby generator" },
+      { url: "/images/products/gen3.png", alt: "Generac 22kW standby generator" },
     ],
   },
   {
@@ -502,8 +506,8 @@ const products = [
     categorySlug: "industrial-generators",
     brandSlug: "generac",
     images: [
-      { url: "/images/products/portableinverter1.jpg", alt: "Generac iQ3800 portable inverter generator" },
-      { url: "/images/products/portableinverter2.jpg", alt: "Generac iQ3800 portable inverter generator" },
+      { url: "/images/products/portableinverter1.png", alt: "Generac iQ3800 portable inverter generator" },
+      { url: "/images/products/portableinverter2.png", alt: "Generac iQ3800 portable inverter generator" },
     ],
   },
 
