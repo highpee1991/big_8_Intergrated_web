@@ -4,12 +4,11 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
 
   images: {
-    // V1 imagery is served from /public. When we move to remote assets
-    // (Cloudinary, Supabase Storage, etc.) in a later phase, add their
-    // hostnames here — nothing else about the <Image> usage needs to change.
-    remotePatterns: [
-      // { protocol: "https", hostname: "res.cloudinary.com" },
-    ],
+    // Cloudinary-hosted product/brand images. The hostname is always
+    // res.cloudinary.com regardless of cloud name (the cloud name is a path
+    // segment, not part of the host), so this works without needing your
+    // actual Cloudinary credentials in this file.
+    remotePatterns: [{ protocol: "https", hostname: "res.cloudinary.com" }],
   },
 };
 
