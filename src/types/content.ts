@@ -70,6 +70,12 @@ export interface CompanyStat {
   value: string;
 }
 
+export interface CompanyContact {
+  phone: string;
+  email: string;
+  address: string;
+}
+
 export interface CompanyInfo {
   name: string;
   legalName: string;
@@ -81,6 +87,7 @@ export interface CompanyInfo {
   story: string;
   mission: string;
   coreArea: string;
+  contact: CompanyContact;
   stats: CompanyStat[];
 }
 

@@ -5,6 +5,7 @@ import { Mail, MapPin, Phone } from "lucide-react";
 
 import { Container } from "@/components/common/container";
 import { NAV_LINKS } from "@/config/nav-data";
+import { getCompanyInfo } from "@/lib/services/company.service";
 
 const FOOTER_DIVISIONS = [
   { label: "Oil & Gas Equipment", href: "/industries/oil-gas" },
@@ -13,15 +14,10 @@ const FOOTER_DIVISIONS = [
   { label: "Medical Equipment", href: "/industries/medical" },
 ];
 
-const CONTACT_DETAILS = {
-  phone: "+1 888-546-9913",
-  email: "contact@big8intergrated.com",
-  address: "1920 Rankin Rd, Ste 145, Houston, TX 77073",
-};
-
 const STAFF_INVOICE_URL = "https://big-eight-invoice-studio.vercel.app/";
 
-function Footer() {
+async function Footer() {
+  const company = await getCompanyInfo();
   const year = new Date().getFullYear();
 
   return (
@@ -99,10 +95,10 @@ function Footer() {
                   aria-hidden="true"
                 />
                 <a
-                  href={`tel:${CONTACT_DETAILS.phone.replace(/\s/g, "")}`}
+                  href={`tel:${company.contact.phone.replace(/\s/g, "")}`}
                   className="text-paper/70 hover:text-paper duration-base text-sm transition-colors"
                 >
-                  {CONTACT_DETAILS.phone}
+                  {company.contact.phone}
                 </a>
               </li>
 
@@ -112,10 +108,10 @@ function Footer() {
                   aria-hidden="true"
                 />
                 <a
-                  href={`mailto:${CONTACT_DETAILS.email}`}
+                  href={`mailto:${company.contact.email}`}
                   className="text-paper/70 hover:text-paper duration-base text-sm transition-colors"
                 >
-                  {CONTACT_DETAILS.email}
+                  {company.contact.email}
                 </a>
               </li>
 
@@ -124,7 +120,7 @@ function Footer() {
                   className="text-paper/40 mt-0.5 size-4 shrink-0"
                   aria-hidden="true"
                 />
-                <span className="text-paper/70 text-sm">{CONTACT_DETAILS.address}</span>
+                <span className="text-paper/70 text-sm">{company.contact.address}</span>
               </li>
             </ul>
           </div>
