@@ -2,6 +2,7 @@
 
 import { prisma } from "@/lib/prisma";
 import { resend, CONTACT_NOTIFY_EMAIL, CONTACT_FROM_EMAIL } from "@/lib/resend";
+import { buildInquiryEmail } from "./email-template";
 import { contactFormSchema } from "./schema";
 
 export interface SubmitInquiryResult {
@@ -70,24 +71,21 @@ export async function submitInquiry(
   if (CONTACT_NOTIFY_EMAIL) {
     try {
       console.log(`Sending inquiry notification to ${CONTACT_NOTIFY_EMAIL}...`);
+      const { subject, text, html } = buildInquiryEmail({
+        name: parsed.data.name,
+        email: parsed.data.email,
+        phone: parsed.data.phone,
+        company: parsed.data.company,
+        message: parsed.data.message,
+        productId,
+      });
       const { data, error } = await resend.emails.send({
         from: CONTACT_FROM_EMAIL,
         to: CONTACT_NOTIFY_EMAIL,
         replyTo: parsed.data.email,
-        subject: productId
-          ? `New quote request (product: ${productId})`
-          : "New contact form submission",
-        text: [
-          `Name: ${parsed.data.name}`,
-          `Email: ${parsed.data.email}`,
-          parsed.data.phone ? `Phone: ${parsed.data.phone}` : null,
-          parsed.data.company ? `Company: ${parsed.data.company}` : null,
-          productId ? `Product: ${productId}` : null,
-          "",
-          parsed.data.message,
-        ]
-          .filter(Boolean)
-          .join("\n"),
+        subject,
+        text,
+        html,
       });
 
       if (error) {
