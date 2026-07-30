@@ -4,12 +4,13 @@ import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, Search } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Container } from "@/components/common/container";
 import { Button } from "@/components/ui/button";
 import { MegaMenu } from "@/components/common/mega-menu";
 import { NestedNavItem } from "@/components/common/nested-nav-item";
+import { HeaderSearch } from "@/components/layout/header-search";
 import { NAV_LINKS, type NavLink } from "@/config/nav-data";
 import { motion as motionTokens } from "@/config/theme";
 
@@ -65,7 +66,8 @@ function Navbar() {
             ))}
           </ul>
 
-          <div className="hidden md:block">
+          <div className="hidden items-center gap-2 md:flex">
+            <HeaderSearch />
             <Button asChild size="sm">
               <Link href="/contact">Request a Quote</Link>
             </Button>
@@ -93,6 +95,25 @@ function Navbar() {
             className="border-border overflow-hidden border-t md:hidden"
           >
             <Container>
+              <form
+                action="/products"
+                className="pt-4"
+                onSubmit={() => setOpen(false)}
+              >
+                <div className="relative">
+                  <Search
+                    className="text-muted pointer-events-none absolute left-3.5 top-1/2 size-4 -translate-y-1/2"
+                    aria-hidden="true"
+                  />
+                  <input
+                    type="search"
+                    name="q"
+                    placeholder="Search products..."
+                    aria-label="Search products"
+                    className="border-border bg-card text-ink placeholder:text-muted focus-visible:outline-primary h-11 w-full rounded-md border pl-10 pr-4 text-sm focus-visible:outline-2 focus-visible:outline-offset-2"
+                  />
+                </div>
+              </form>
               <ul className="flex flex-col gap-1 py-4">
                 {NAV_LINKS.map((link) =>
                   link.megaMenu ? (

@@ -159,7 +159,7 @@ export const NAV_LINKS: NavLink[] = [
         },
         {
           label: "Safety Equipment",
-          href: "/products",
+          href: "/products/industrial/safety-equipment",
           description: "PPE & site safety gear",
           icon: ShieldCheck,
         },

@@ -40,6 +40,8 @@ export interface ProductSummary {
   divisionName: string;
   categorySlug?: string;
   categoryName?: string;
+  brandSlug?: string;
+  brandName?: string;
 }
 
 // Full shape for a single product detail page — everything ProductSummary

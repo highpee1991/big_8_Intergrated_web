@@ -106,3 +106,21 @@ export async function getDivisionWithCategoriesBySlug(
     })),
   };
 }
+
+// Flat list of every category across all divisions — used by the /products
+// filter bar. getDivisionsWithCategories() is for the nav (nested by
+// division); this is for a flat dropdown of all category options at once.
+export async function getAllCategories(): Promise<Category[]> {
+  const rows = await prisma.category.findMany({
+    include: { division: { select: { slug: true, name: true } } },
+    orderBy: { name: "asc" },
+  });
+
+  return rows.map((c) => ({
+    id: c.id,
+    slug: c.slug,
+    name: c.name,
+    divisionSlug: c.division.slug,
+    divisionName: c.division.name,
+  }));
+}

@@ -76,6 +76,7 @@ const categories = [
   { slug: "valves", name: "Valves", divisionSlug: "oil-gas-equipment" },
   { slug: "actuators", name: "Actuators", divisionSlug: "oil-gas-equipment" },
   { slug: "welding-material", name: "Welding Material", divisionSlug: "oil-gas-equipment" },
+  { slug: "safety-equipment", name: "Safety Equipment", divisionSlug: "industrial" },
   { slug: "forklifts", name: "Forklifts", divisionSlug: "heavy-equipment" },
   { slug: "industrial-generators", name: "Industrial Generators", divisionSlug: "heavy-equipment" },
   { slug: "tractors", name: "Tractors", divisionSlug: "heavy-equipment" },
@@ -83,27 +84,27 @@ const categories = [
 
 // --- Brands (from src/data/brands.ts) ---------------------------------------
 const brands = [
-  { slug: "abb", name: "ABB", logoUrl: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349509/big8-integrated/brands/abb.png" },
-  { slug: "apollo", name: "Apollo", logoUrl: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349510/big8-integrated/brands/apollo.png" },
-  { slug: "bobcat", name: "Bobcat", logoUrl: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349511/big8-integrated/brands/bobcat.png" },
-  { slug: "cameron", name: "Cameron", logoUrl: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349512/big8-integrated/brands/cameron.png" },
-  { slug: "cat", name: "Caterpillar", logoUrl: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349514/big8-integrated/brands/cat.jpg" },
-  { slug: "cummins", name: "Cummins", logoUrl: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349515/big8-integrated/brands/cummins.png" },
-  { slug: "emerson", name: "Emerson", logoUrl: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349516/big8-integrated/brands/emerson.png" },
-  { slug: "flowserve", name: "Flowserve", logoUrl: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349517/big8-integrated/brands/flowserve.png" },
-  { slug: "ge", name: "GE", logoUrl: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349518/big8-integrated/brands/ge.webp" },
-  { slug: "generac", name: "Generac", logoUrl: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349519/big8-integrated/brands/genrac.png" },
-  { slug: "john-deere", name: "John Deere", logoUrl: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349520/big8-integrated/brands/john_deere.png" },
-  { slug: "loop-telecom", name: "Loop Telecom", logoUrl: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349521/big8-integrated/brands/loop_telecom.png" },
-  { slug: "manitou", name: "Manitou", logoUrl: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349522/big8-integrated/brands/manitou.png" },
-  { slug: "schneider", name: "Schneider Electric", logoUrl: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349523/big8-integrated/brands/schneider.png" },
+  { slug: "abb", name: "ABB", logoUrl: "/images/brands/abb.png" },
+  { slug: "apollo", name: "Apollo", logoUrl: "/images/brands/apollo.png" },
+  { slug: "bobcat", name: "Bobcat", logoUrl: "/images/brands/bobcat.png" },
+  { slug: "cameron", name: "Cameron", logoUrl: "/images/brands/cameron.png" },
+  { slug: "cat", name: "Caterpillar", logoUrl: "/images/brands/cat.png" },
+  { slug: "cummins", name: "Cummins", logoUrl: "/images/brands/cummins.png" },
+  { slug: "emerson", name: "Emerson", logoUrl: "/images/brands/emerson.png" },
+  { slug: "flowserve", name: "Flowserve", logoUrl: "/images/brands/flowserve.png" },
+  { slug: "ge", name: "GE", logoUrl: "/images/brands/ge.png" },
+  { slug: "generac", name: "Generac", logoUrl: "/images/brands/genrac.png" },
+  { slug: "john-deere", name: "John Deere", logoUrl: "/images/brands/john_deere.png" },
+  { slug: "loop-telecom", name: "Loop Telecom", logoUrl: "/images/brands/loop_telecom.png" },
+  { slug: "manitou", name: "Manitou", logoUrl: "/images/brands/manitou.png" },
+  { slug: "schneider", name: "Schneider Electric", logoUrl: "/images/brands/schneider.png" },
   {
     slug: "siemens-health",
     name: "Siemens Healthineers",
-    logoUrl: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349524/big8-integrated/brands/siemens_health.png",
+    logoUrl: "/images/brands/siemens_health.png",
   },
-  { slug: "teleste", name: "Teleste", logoUrl: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349525/big8-integrated/brands/teleste.png" },
-  { slug: "victaulic", name: "Victaulic", logoUrl: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349526/big8-integrated/brands/victaulic.png" },
+  { slug: "teleste", name: "Teleste", logoUrl: "/images/brands/teleste.png" },
+  { slug: "victaulic", name: "Victaulic", logoUrl: "/images/brands/victaulic.png" },
   { slug: "jcb", name: "JCB", logoUrl: "/images/brands/jcb.png" },
   { slug: "yale", name: "Yale", logoUrl: "/images/brands/yale.png" },
   { slug: "hangcha", name: "Hangcha", logoUrl: "/images/brands/hangcha.png" },
@@ -121,14 +122,14 @@ const products = [
     title: "Container",
     summary: "Heavy-duty shipping and storage containers.",
     divisionSlug: "heavy-equipment",
-    images: [{ url: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349445/big8-integrated/products/container.jpg", alt: "Container" }],
+    images: [{ url: "/images/products/container.png", alt: "Container" }],
   },
   {
     slug: "ethernet-fiber",
     title: "Ethernet Fiber",
     summary: "Fiber and networking cabling for enterprise IT infrastructure.",
     divisionSlug: "information-technology",
-    images: [{ url: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349452/big8-integrated/products/ethernet_fiber.png", alt: "Ethernet fiber cabling" }],
+    images: [{ url: "/images/products/ethernet_fiber.png", alt: "Ethernet fiber cabling" }],
   },
   {
     slug: "ethernet-cable",
@@ -137,7 +138,7 @@ const products = [
     description:
       "A large wooden spool (cable reel) loaded with thick, gray cable wound into many neat vertical coils, along with stripped cable segments showing exposed multicolored inner wires — available with labeled cable types and gauges to match your infrastructure needs.",
     divisionSlug: "information-technology",
-    images: [{ url: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349450/big8-integrated/products/ethernet_cable.png", alt: "Ethernet cable reel" }],
+    images: [{ url: "/images/products/ethernet_cable.png", alt: "Ethernet cable reel" }],
   },
   {
     slug: "generator",
@@ -145,14 +146,14 @@ const products = [
     summary: "Industrial power generators for continuous or backup power.",
     divisionSlug: "heavy-equipment",
     categorySlug: "industrial-generators",
-    images: [{ url: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349457/big8-integrated/products/generator.png", alt: "Generator" }],
+    images: [{ url: "/images/products/generator.png", alt: "Generator" }],
   },
   {
     slug: "inverter",
     title: "Inverter",
     summary: "Custom power inverter solutions.",
     divisionSlug: "other",
-    images: [{ url: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349468/big8-integrated/products/inverter.png", alt: "Inverter" }],
+    images: [{ url: "/images/products/inverter.png", alt: "Inverter" }],
   },
   {
     slug: "tractor",
@@ -160,7 +161,7 @@ const products = [
     summary: "Heavy equipment tractors for industrial and construction use.",
     divisionSlug: "heavy-equipment",
     categorySlug: "tractors",
-    images: [{ url: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349469/big8-integrated/products/jcb_tractor.png", alt: "Tractor" }],
+    images: [{ url: "/images/products/jcb_tractor.png", alt: "Tractor" }],
   },
   {
     slug: "manitou-forklift",
@@ -169,14 +170,14 @@ const products = [
     divisionSlug: "heavy-equipment",
     categorySlug: "forklifts",
     brandSlug: "manitou",
-    images: [{ url: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349480/big8-integrated/products/manitou_forklift.png", alt: "Manitou forklift" }],
+    images: [{ url: "/images/products/manitou_forklift.png", alt: "Manitou forklift" }],
   },
   {
     slug: "optiscan",
     title: "Optiscan",
     summary: "Diagnostic medical imaging equipment.",
     divisionSlug: "medical",
-    images: [{ url: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349485/big8-integrated/products/optiscan.png", alt: "Optiscan medical device" }],
+    images: [{ url: "/images/products/optiscan.png", alt: "Optiscan medical device" }],
   },
   {
     slug: "valve",
@@ -184,7 +185,7 @@ const products = [
     summary: "Industrial valves for oil and gas operations.",
     divisionSlug: "oil-gas-equipment",
     categorySlug: "valves",
-    images: [{ url: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349508/big8-integrated/products/valve.jpg", alt: "Industrial valve" }],
+    images: [{ url: "/images/products/valve.png", alt: "Industrial valve" }],
   },
 
   // --- Forklifts / Telehandlers (heavy-equipment / forklifts) ---------------
@@ -209,11 +210,11 @@ const products = [
     categorySlug: "forklifts",
     brandSlug: "manitou",
     images: [
-      { url: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349471/big8-integrated/products/manitou1.png", alt: "Manitou MT1840A telehandler" },
-      { url: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349472/big8-integrated/products/manitou2.png", alt: "Manitou MT1840A telehandler" },
-      { url: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349474/big8-integrated/products/manitou3.png", alt: "Manitou MT1840A telehandler" },
-      { url: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349476/big8-integrated/products/manitou4.png", alt: "Manitou MT1840A telehandler" },
-      { url: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349478/big8-integrated/products/manitou5.png", alt: "Manitou MT1840A telehandler" },
+      { url: "/images/products/manitou1.png", alt: "Manitou MT1840A telehandler" },
+      { url: "/images/products/manitou2.png", alt: "Manitou MT1840A telehandler" },
+      { url: "/images/products/manitou3.png", alt: "Manitou MT1840A telehandler" },
+      { url: "/images/products/manitou4.png", alt: "Manitou MT1840A telehandler" },
+      { url: "/images/products/manitou5.png", alt: "Manitou MT1840A telehandler" },
     ],
   },
   {
@@ -238,10 +239,10 @@ const products = [
     categorySlug: "forklifts",
     brandSlug: "jcb",
     images: [
-      { url: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349499/big8-integrated/products/telehandler1.png", alt: "JCB 540-170 telehandler" },
-      { url: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349500/big8-integrated/products/telehandler2.png", alt: "JCB 540-170 telehandler" },
-      { url: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349501/big8-integrated/products/telehandler3.png", alt: "JCB 540-170 telehandler" },
-      { url: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349502/big8-integrated/products/telehandler4.png", alt: "JCB 540-170 telehandler" },
+      { url: "/images/products/telehandler1.png", alt: "JCB 540-170 telehandler" },
+      { url: "/images/products/telehandler2.png", alt: "JCB 540-170 telehandler" },
+      { url: "/images/products/telehandler3.png", alt: "JCB 540-170 telehandler" },
+      { url: "/images/products/telehandler4.png", alt: "JCB 540-170 telehandler" },
     ],
   },
   {
@@ -259,10 +260,10 @@ const products = [
     categorySlug: "forklifts",
     brandSlug: "yale",
     images: [
-      { url: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349504/big8-integrated/products/turret1.jpg", alt: "Yale NTA-SB turret forklift" },
-      { url: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349505/big8-integrated/products/turret2.jpg", alt: "Yale NTA-SB turret forklift" },
-      { url: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349506/big8-integrated/products/turret3.jpg", alt: "Yale NTA-SB turret forklift" },
-      { url: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349507/big8-integrated/products/turret4.jpg", alt: "Yale NTA-SB turret forklift" },
+      { url: "/images/products/turret1.png", alt: "Yale NTA-SB turret forklift" },
+      { url: "/images/products/turret2.png", alt: "Yale NTA-SB turret forklift" },
+      { url: "/images/products/turret3.png", alt: "Yale NTA-SB turret forklift" },
+      { url: "/images/products/turret4.png", alt: "Yale NTA-SB turret forklift" },
     ],
   },
   {
@@ -280,9 +281,9 @@ const products = [
     categorySlug: "forklifts",
     brandSlug: "yale",
     images: [
-      { url: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349490/big8-integrated/products/picker1.png", alt: "Yale electric order picker" },
-      { url: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349491/big8-integrated/products/picker2.png", alt: "Yale electric order picker" },
-      { url: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349492/big8-integrated/products/picker3.png", alt: "Yale electric order picker" },
+      { url: "/images/products/picker1.png", alt: "Yale electric order picker" },
+      { url: "/images/products/picker2.png", alt: "Yale electric order picker" },
+      { url: "/images/products/picker3.png", alt: "Yale electric order picker" },
     ],
   },
   {
@@ -302,10 +303,10 @@ const products = [
     categorySlug: "forklifts",
     brandSlug: "hangcha",
     images: [
-      { url: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349458/big8-integrated/products/hangcha1.png", alt: "Hangcha CPCD30 diesel forklift" },
-      { url: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349459/big8-integrated/products/hangcha2.png", alt: "Hangcha CPCD30 diesel forklift" },
-      { url: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349460/big8-integrated/products/hangcha3.png", alt: "Hangcha CPCD30 diesel forklift" },
-      { url: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349462/big8-integrated/products/hangcha4.png", alt: "Hangcha CPCD30 diesel forklift" },
+      { url: "/images/products/hangcha1.jpeg", alt: "Hangcha CPCD30 diesel forklift" },
+      { url: "/images/products/hangcha2.png", alt: "Hangcha CPCD30 diesel forklift" },
+      { url: "/images/products/hangcha3.png", alt: "Hangcha CPCD30 diesel forklift" },
+      { url: "/images/products/hangcha4.png", alt: "Hangcha CPCD30 diesel forklift" },
     ],
   },
   {
@@ -325,9 +326,9 @@ const products = [
     categorySlug: "forklifts",
     brandSlug: "hangcha",
     images: [
-      { url: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349463/big8-integrated/products/hangchaCPYD501.png", alt: "Hangcha CPYD50 LPG forklift" },
-      { url: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349465/big8-integrated/products/hangchaCPYD502.png", alt: "Hangcha CPYD50 LPG forklift" },
-      { url: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349466/big8-integrated/products/hangchaCPYD503.png", alt: "Hangcha CPYD50 LPG forklift" },
+      { url: "/images/products/hangchaCPYD501.png", alt: "Hangcha CPYD50 LPG forklift" },
+      { url: "/images/products/hangchaCPYD502.png", alt: "Hangcha CPYD50 LPG forklift" },
+      { url: "/images/products/hangchaCPYD503.png", alt: "Hangcha CPYD50 LPG forklift" },
     ],
   },
 
@@ -361,9 +362,9 @@ const products = [
     categorySlug: "industrial-generators",
     brandSlug: "generac",
     images: [
-      { url: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349496/big8-integrated/products/powergen1.png", alt: "Generac MDG100DF4 diesel generator" },
-      { url: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349497/big8-integrated/products/powergen2.png", alt: "Generac MDG100DF4 diesel generator" },
-      { url: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349498/big8-integrated/products/powergen3.png", alt: "Generac MDG100DF4 diesel generator" },
+      { url: "/images/products/powergen1.png", alt: "Generac MDG100DF4 diesel generator" },
+      { url: "/images/products/powergen2.png", alt: "Generac MDG100DF4 diesel generator" },
+      { url: "/images/products/powergen3.png", alt: "Generac MDG100DF4 diesel generator" },
     ],
   },
   {
@@ -395,9 +396,9 @@ const products = [
     categorySlug: "industrial-generators",
     brandSlug: "generac",
     images: [
-      { url: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349496/big8-integrated/products/powergen1.png", alt: "Generac MDG75DF4 diesel generator" },
-      { url: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349497/big8-integrated/products/powergen2.png", alt: "Generac MDG75DF4 diesel generator" },
-      { url: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349498/big8-integrated/products/powergen3.png", alt: "Generac MDG75DF4 diesel generator" },
+      { url: "/images/products/powergen1.png", alt: "Generac MDG75DF4 diesel generator" },
+      { url: "/images/products/powergen2.png", alt: "Generac MDG75DF4 diesel generator" },
+      { url: "/images/products/powergen3.png", alt: "Generac MDG75DF4 diesel generator" },
     ],
   },
   {
@@ -421,9 +422,9 @@ const products = [
     categorySlug: "industrial-generators",
     brandSlug: "generac",
     images: [
-      { url: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349453/big8-integrated/products/gen1.png", alt: "Generac 10kW standby generator" },
-      { url: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349454/big8-integrated/products/gen2.png", alt: "Generac 10kW standby generator" },
-      { url: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349455/big8-integrated/products/gen3.png", alt: "Generac 10kW standby generator" },
+      { url: "/images/products/gen1.png", alt: "Generac 10kW standby generator" },
+      { url: "/images/products/gen2.png", alt: "Generac 10kW standby generator" },
+      { url: "/images/products/gen3.png", alt: "Generac 10kW standby generator" },
     ],
   },
   {
@@ -448,9 +449,9 @@ const products = [
     categorySlug: "industrial-generators",
     brandSlug: "generac",
     images: [
-      { url: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349453/big8-integrated/products/gen1.png", alt: "Generac 10kW standby generator with transfer switch" },
-      { url: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349454/big8-integrated/products/gen2.png", alt: "Generac 10kW standby generator with transfer switch" },
-      { url: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349455/big8-integrated/products/gen3.png", alt: "Generac 10kW standby generator with transfer switch" },
+      { url: "/images/products/gen1.png", alt: "Generac 10kW standby generator with transfer switch" },
+      { url: "/images/products/gen2.png", alt: "Generac 10kW standby generator with transfer switch" },
+      { url: "/images/products/gen3.png", alt: "Generac 10kW standby generator with transfer switch" },
     ],
   },
   {
@@ -478,9 +479,9 @@ const products = [
     categorySlug: "industrial-generators",
     brandSlug: "generac",
     images: [
-      { url: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349453/big8-integrated/products/gen1.png", alt: "Generac 22kW standby generator" },
-      { url: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349454/big8-integrated/products/gen2.png", alt: "Generac 22kW standby generator" },
-      { url: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349455/big8-integrated/products/gen3.png", alt: "Generac 22kW standby generator" },
+      { url: "/images/products/gen1.png", alt: "Generac 22kW standby generator" },
+      { url: "/images/products/gen2.png", alt: "Generac 22kW standby generator" },
+      { url: "/images/products/gen3.png", alt: "Generac 22kW standby generator" },
     ],
   },
   {
@@ -503,8 +504,8 @@ const products = [
     categorySlug: "industrial-generators",
     brandSlug: "generac",
     images: [
-      { url: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349493/big8-integrated/products/portableinverter1.png", alt: "Generac iQ3800 portable inverter generator" },
-      { url: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349495/big8-integrated/products/portableinverter2.png", alt: "Generac iQ3800 portable inverter generator" },
+      { url: "/images/products/portableinverter1.png", alt: "Generac iQ3800 portable inverter generator" },
+      { url: "/images/products/portableinverter2.png", alt: "Generac iQ3800 portable inverter generator" },
     ],
   },
 
@@ -524,9 +525,9 @@ const products = [
     divisionSlug: "medical",
     brandSlug: "siemens-health",
     images: [
-      { url: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349446/big8-integrated/products/diagnostic-ultrasound1.png", alt: "OptiFidelity diagnostic ultrasound platform" },
-      { url: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349447/big8-integrated/products/diagnostic-ultrasound2.png", alt: "OptiFidelity diagnostic ultrasound platform" },
-      { url: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349449/big8-integrated/products/diagnostic-ultrasound3.png", alt: "OptiFidelity diagnostic ultrasound platform" },
+      { url: "/images/products/diagnostic-ultrasound1.png", alt: "OptiFidelity diagnostic ultrasound platform" },
+      { url: "/images/products/diagnostic-ultrasound2.png", alt: "OptiFidelity diagnostic ultrasound platform" },
+      { url: "/images/products/diagnostic-ultrasound3.png", alt: "OptiFidelity diagnostic ultrasound platform" },
     ],
   },
   {
@@ -543,9 +544,9 @@ const products = [
     divisionSlug: "medical",
     brandSlug: "varian",
     images: [
-      { url: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349446/big8-integrated/products/diagnostic-ultrasound1.png", alt: "Radiance Precision Linear Accelerator Platform" },
-      { url: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349447/big8-integrated/products/diagnostic-ultrasound2.png", alt: "Radiance Precision Linear Accelerator Platform" },
-      { url: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349449/big8-integrated/products/diagnostic-ultrasound3.png", alt: "Radiance Precision Linear Accelerator Platform" },
+      { url: "/images/products/diagnostic-ultrasound1.png", alt: "Radiance Precision Linear Accelerator Platform" },
+      { url: "/images/products/diagnostic-ultrasound2.png", alt: "Radiance Precision Linear Accelerator Platform" },
+      { url: "/images/products/diagnostic-ultrasound3.png", alt: "Radiance Precision Linear Accelerator Platform" },
     ],
   },
   {
@@ -562,9 +563,9 @@ const products = [
     divisionSlug: "medical",
     brandSlug: "ge",
     images: [
-      { url: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349481/big8-integrated/products/maximscan1.png", alt: "MaximScan CT system" },
-      { url: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349482/big8-integrated/products/maximscan2.png", alt: "MaximScan CT system" },
-      { url: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349484/big8-integrated/products/maximscan3.png", alt: "MaximScan CT system" },
+      { url: "/images/products/maximscan1.png", alt: "MaximScan CT system" },
+      { url: "/images/products/maximscan2.png", alt: "MaximScan CT system" },
+      { url: "/images/products/maximscan3.png", alt: "MaximScan CT system" },
     ],
   },
   {
@@ -582,9 +583,9 @@ const products = [
     divisionSlug: "medical",
     brandSlug: "philips",
     images: [
-      { url: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349486/big8-integrated/products/optiscanhighfidelity1.png", alt: "OptiScan High-Fidelity MRI platform" },
-      { url: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349487/big8-integrated/products/optiscanhighfidelity2.png", alt: "OptiScan High-Fidelity MRI platform" },
-      { url: "https://res.cloudinary.com/dpzig2uro/image/upload/v1785349489/big8-integrated/products/optiscanhighfidelity3.png", alt: "OptiScan High-Fidelity MRI platform" },
+      { url: "/images/products/optiscanhighfidelity1.png", alt: "OptiScan High-Fidelity MRI platform" },
+      { url: "/images/products/optiscanhighfidelity2.png", alt: "OptiScan High-Fidelity MRI platform" },
+      { url: "/images/products/optiscanhighfidelity3.png", alt: "OptiScan High-Fidelity MRI platform" },
     ],
   },
 ];

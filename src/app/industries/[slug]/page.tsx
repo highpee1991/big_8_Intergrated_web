@@ -10,25 +10,18 @@ import { ArrowRight } from "lucide-react";
 import { Section } from "@/components/common/section";
 import { Breadcrumbs } from "@/components/common/breadcrumbs";
 import { Reveal } from "@/components/common/reveal";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { Cta } from "@/components/common/cta";
 import { ProductCard } from "@/components/cards/product-card";
 import {
   getDivisionWithCategoriesBySlug,
   getDivisions,
 } from "@/lib/services/industries.service";
 import { getProductsByDivision } from "@/lib/services/products.service";
-import { CtaSection } from "@/features/home/components/cta-section";
-import { getHeroContent } from "@/lib/services/homepage.service";
 
 export async function generateStaticParams() {
   const divisions = await getDivisions();
   return divisions.map((d) => ({ slug: d.slug }));
 }
-
- const [hero] = await Promise.all([
-    getHeroContent(),
-  ]);
 
 export async function generateMetadata({
   params,
@@ -72,38 +65,56 @@ export default async function IndustrySlugPage({
 
       <Section spacing="sm" className="pt-0">
         <Reveal>
-          <div className="flex flex-col gap-4">
-            <span className="flex size-12 items-center justify-center rounded-lg bg-surface">
-              <Icon className="size-6 text-secondary" aria-hidden="true" />
-            </span>
-            <h1 className="font-display text-3xl font-semibold text-ink sm:text-4xl">
+          <div className="flex max-w-3xl flex-col gap-4">
+            <div className="flex items-center gap-2 text-secondary">
+              <Icon className="size-4" aria-hidden="true" />
+              <span className="font-mono text-xs font-medium uppercase tracking-widest">
+                Industry
+              </span>
+            </div>
+            <h1 className="font-display text-4xl font-semibold text-ink sm:text-5xl">
               {division.name}
             </h1>
-            <p className="max-w-2xl text-base text-ink-muted">{division.description}</p>
+            <p className="max-w-2xl text-lg text-ink-muted">{division.description}</p>
 
-            {division.categories && division.categories.length > 0 ? (
-              <div className="flex flex-wrap gap-2 pt-2">
+            <Link
+              href={`/products/${division.slug}`}
+              className="group mt-2 inline-flex w-fit items-center gap-1.5 text-sm font-medium text-primary"
+            >
+              View all {division.name} products
+              <ArrowRight
+                className="size-4 transition-transform duration-base group-hover:translate-x-0.5"
+                aria-hidden="true"
+              />
+            </Link>
+          </div>
+
+          {division.categories && division.categories.length > 0 ? (
+            <div className="mt-8 border-t border-border pt-6">
+              <p className="mb-3 font-mono text-xs font-medium uppercase tracking-widest text-muted">
+                Product Categories
+              </p>
+              <div className="flex flex-wrap gap-x-6 gap-y-2">
                 {division.categories.map((category) => (
-                  <Link key={category.id} href={`/products/${division.slug}/${category.slug}`}>
-                    <Badge variant="default" className="hover:bg-border/40">
-                      {category.name}
-                    </Badge>
+                  <Link
+                    key={category.id}
+                    href={`/products/${division.slug}/${category.slug}`}
+                    className="group inline-flex items-center gap-1 text-sm font-medium text-ink transition-colors hover:text-primary"
+                  >
+                    {category.name}
+                    <ArrowRight
+                      className="size-3.5 -translate-x-0.5 opacity-0 transition-all duration-base group-hover:translate-x-0 group-hover:opacity-100"
+                      aria-hidden="true"
+                    />
                   </Link>
                 ))}
               </div>
-            ) : null}
-
-            <Button asChild variant="link" className="w-fit px-0">
-              <Link href={`/products/${division.slug}`}>
-                View all {division.name} products
-                <ArrowRight className="size-4" aria-hidden="true" />
-              </Link>
-            </Button>
-          </div>
+            </div>
+          ) : null}
         </Reveal>
       </Section>
 
-      <Section tone="surface" className="pt-0">
+      <Section tone="surface">
         {products.length > 0 ? (
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {products.slice(0, 6).map((p, i) => (
@@ -121,7 +132,14 @@ export default async function IndustrySlugPage({
       </Section>
 
       <Section spacing="sm" className="pt-0">
-              <CtaSection content={hero} />
+        <Reveal>
+          <Cta
+            title={`Need something specific from ${division.name}?`}
+            description="Tell us what you're looking for and we'll source it."
+            primaryLabel="Contact Us"
+            primaryHref={`/contact?division=${division.slug}`}
+          />
+        </Reveal>
       </Section>
     </main>
   );

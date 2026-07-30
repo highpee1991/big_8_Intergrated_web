@@ -21,6 +21,7 @@ const summarySelect = {
   currency: true,
   division: { select: { slug: true, name: true } },
   category: { select: { slug: true, name: true } },
+  brand: { select: { slug: true, name: true } },
   images: { orderBy: { position: "asc" }, take: 1 },
 } satisfies Prisma.ProductSelect;
 
@@ -40,6 +41,8 @@ function toSummary(row: SummaryRow): ProductSummary {
     divisionName: row.division.name,
     categorySlug: row.category?.slug,
     categoryName: row.category?.name,
+    brandSlug: row.brand?.slug,
+    brandName: row.brand?.name,
   };
 }
 
@@ -111,6 +114,19 @@ export async function getProductBySlug(slug: string): Promise<ProductDetail | nu
     categoryName: row.category?.name,
     brand: row.brand,
   };
+}
+
+// Used by /products filters — only brands that actually have at least one
+// product, so the dropdown never shows an option with zero results.
+export async function getProductBrands(): Promise<
+  Array<{ slug: string; name: string }>
+> {
+  const rows = await prisma.brand.findMany({
+    where: { products: { some: { isActive: true } } },
+    select: { slug: true, name: true },
+    orderBy: { name: "asc" },
+  });
+  return rows;
 }
 
 // Used by generateStaticParams() on the product detail route so every
