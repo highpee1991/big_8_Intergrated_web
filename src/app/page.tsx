@@ -6,6 +6,7 @@ import { getBrands } from "@/lib/services/brands.service";
 
 import { HeroSection } from "@/features/home/components/hero-section";
 import { AboutSection } from "@/features/home/components/about-section";
+import { StatsBandSection } from "@/features/home/components/stats-band-section";
 import { BusinessDivisionsSection } from "@/features/home/components/business-divisions-section";
 import { FeaturedProductsSection } from "@/features/home/components/featured-products-section";
 import { WhyChooseUsSection } from "@/features/home/components/why-choose-us-section";
@@ -39,6 +40,7 @@ export default async function HomePage() {
       <HeroSection content={hero} />
       <TrustedAcross clients={clients} />
       <AboutSection company={company} />
+      <StatsBandSection stats={company.stats} />
       <BusinessDivisionsSection divisions={divisions} />
       <FeaturedProductsSection products={products} />
       <WhyChooseUsSection points={whyChooseUs} />
