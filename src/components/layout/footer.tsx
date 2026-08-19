@@ -8,9 +8,9 @@ import { NAV_LINKS } from "@/config/nav-data";
 import { getCompanyInfo } from "@/lib/services/company.service";
 
 const FOOTER_DIVISIONS = [
-  { label: "Oil & Gas Equipment", href: "/industries/oil-gas" },
+  { label: "Oil & Gas Equipment", href: "/industries/oil-gas-equipment" },
   { label: "Heavy Equipment", href: "/industries/heavy-equipment" },
-  { label: "IT Solutions", href: "/industries/it" },
+  { label: "IT Solutions", href: "/industries/information-technology" },
   { label: "Medical Equipment", href: "/industries/medical" },
 ];
 
@@ -141,6 +141,13 @@ async function Footer() {
             >
               Staff Portal
             </a>
+
+            <Link
+              href="/admin"
+              className="text-paper/25 hover:text-paper/50 duration-base transition-colors"
+            >
+              Admin
+            </Link>
           </div>
         </div>
       </Container>

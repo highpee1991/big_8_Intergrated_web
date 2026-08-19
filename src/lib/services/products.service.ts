@@ -138,3 +138,44 @@ export async function getAllProductSlugs(): Promise<string[]> {
   });
   return rows.map((r) => r.slug);
 }
+// --- Admin-only ---------------------------------------------------------
+// Deliberately separate from the public getAllProducts(): includes inactive
+// products (public listings never should), and returns isActive/featured
+// so the admin table can show real status, not just what a visitor sees.
+export interface AdminProductRow {
+  id: string;
+  slug: string;
+  title: string;
+  image: { url: string; alt: string } | null;
+  divisionName: string;
+  categoryName: string | null;
+  brandName: string | null;
+  priceLabel: string;
+  isActive: boolean;
+  featured: boolean;
+}
+
+export async function getAllProductsForAdmin(): Promise<AdminProductRow[]> {
+  const rows = await prisma.product.findMany({
+    orderBy: { updatedAt: "desc" },
+    include: {
+      division: { select: { name: true } },
+      category: { select: { name: true } },
+      brand: { select: { name: true } },
+      images: { orderBy: { position: "asc" }, take: 1 },
+    },
+  });
+
+  return rows.map((row) => ({
+    id: row.id,
+    slug: row.slug,
+    title: row.title,
+    image: row.images[0] ? { url: row.images[0].url, alt: row.images[0].alt } : null,
+    divisionName: row.division.name,
+    categoryName: row.category?.name ?? null,
+    brandName: row.brand?.name ?? null,
+    priceLabel: formatPrice(row.price ? Number(row.price) : null, row.currency),
+    isActive: row.isActive,
+    featured: row.featured,
+  }));
+}
