@@ -179,3 +179,14 @@ export async function getAllProductsForAdmin(): Promise<AdminProductRow[]> {
     featured: row.featured,
   }));
 }
+
+// Used by the admin product form's Brand dropdown — unlike getProductBrands()
+// (used for the public filter bar), this includes brands with zero products
+// yet, since the admin needs to be able to assign a brand to a brand-new product.
+export async function getAllBrandsForAdmin(): Promise<Array<{ id: string; slug: string; name: string }>> {
+  const rows = await prisma.brand.findMany({
+    select: { id: true, slug: true, name: true },
+    orderBy: { name: "asc" },
+  });
+  return rows;
+}

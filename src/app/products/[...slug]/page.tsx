@@ -17,6 +17,7 @@ import { Button } from "@/components/ui/button";
 import { ProductCard } from "@/components/cards/product-card";
 import { ProductGallery } from "@/components/products/product-gallery";
 import { SpecTable } from "@/components/products/spec-table";
+import { Markdown } from "@/components/common/markdown";
 import {
   getProductBySlug,
   getProductsByDivision,
@@ -175,9 +176,7 @@ async function ProductDetail({ slug }: { slug: string }) {
               </Button>
 
               {product.description ? (
-                <p className="whitespace-pre-line text-sm leading-relaxed text-ink-muted">
-                  {product.description}
-                </p>
+                <Markdown>{product.description}</Markdown>
               ) : null}
 
               {product.specs ? (
