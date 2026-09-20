@@ -190,3 +190,47 @@ export async function getAllBrandsForAdmin(): Promise<Array<{ id: string; slug: 
   });
   return rows;
 }
+
+// Powers /admin/products/[id]/edit — raw, editable shape (not the
+// customer-facing ProductDetail): actual IDs for division/category/brand
+// (not just names), raw price/specs, and each image's own id (needed so
+// the edit form can mark specific existing images for deletion).
+export interface AdminProductDetail {
+  id: string;
+  title: string;
+  slug: string;
+  summary: string;
+  description: string | null;
+  price: string | null; // as a plain string for a controlled number input
+  divisionId: string;
+  categoryId: string | null;
+  brandId: string | null;
+  featured: boolean;
+  isActive: boolean;
+  specs: Record<string, string> | null;
+  images: Array<{ id: string; url: string; alt: string }>;
+}
+
+export async function getProductByIdForAdmin(id: string): Promise<AdminProductDetail | null> {
+  const row = await prisma.product.findUnique({
+    where: { id },
+    include: { images: { orderBy: { position: "asc" } } },
+  });
+  if (!row) return null;
+
+  return {
+    id: row.id,
+    title: row.title,
+    slug: row.slug,
+    summary: row.summary,
+    description: row.description,
+    price: row.price ? row.price.toString() : null,
+    divisionId: row.divisionId,
+    categoryId: row.categoryId,
+    brandId: row.brandId,
+    featured: row.featured,
+    isActive: row.isActive,
+    specs: (row.specs as Record<string, string> | null) ?? null,
+    images: row.images.map((img) => ({ id: img.id, url: img.url, alt: img.alt })),
+  };
+}

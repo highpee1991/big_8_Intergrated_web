@@ -25,30 +25,55 @@ export interface FormBrand {
   name: string;
 }
 
+export interface ProductFormDefaultValues {
+  id: string;
+  title: string;
+  slug: string;
+  summary: string;
+  description: string | null;
+  price: string | null;
+  divisionId: string;
+  categoryId: string | null;
+  brandId: string | null;
+  featured: boolean;
+  isActive: boolean;
+  specs: Record<string, string> | null;
+  existingImages: Array<{ id: string; url: string; alt: string }>;
+}
+
 export interface ProductFormProps {
   divisions: FormDivision[];
   brands: FormBrand[];
   action: (state: ProductFormState, formData: FormData) => Promise<ProductFormState>;
   submitLabel?: string;
+  defaultValues?: ProductFormDefaultValues;
 }
 
 const NEW_BRAND_VALUE = "__new__";
 
-function ProductForm({ divisions, brands, action, submitLabel = "Create Product" }: ProductFormProps) {
+function ProductForm({ divisions, brands, action, submitLabel = "Create Product", defaultValues }: ProductFormProps) {
+  const isEditing = Boolean(defaultValues);
   const [state, formAction, isPending] = useActionState<ProductFormState, FormData>(action, {
     success: false,
   });
 
-  const [title, setTitle] = useState("");
-  const [slug, setSlug] = useState("");
-  const [slugTouched, setSlugTouched] = useState(false);
-  const [divisionId, setDivisionId] = useState("");
+  const [title, setTitle] = useState(defaultValues?.title ?? "");
+  const [slug, setSlug] = useState(defaultValues?.slug ?? "");
+  // In edit mode, the slug is already live at a real URL — don't let
+  // editing the title silently regenerate it out from under an existing page.
+  const [slugTouched, setSlugTouched] = useState(isEditing);
+  const [divisionId, setDivisionId] = useState(defaultValues?.divisionId ?? "");
 
-  const [brandSelectValue, setBrandSelectValue] = useState("");
+  const [brandSelectValue, setBrandSelectValue] = useState(defaultValues?.brandId ?? "");
   const [newBrandName, setNewBrandName] = useState("");
   const isAddingNewBrand = brandSelectValue === NEW_BRAND_VALUE;
 
-  const [specs, setSpecs] = useState<Array<{ label: string; value: string }>>([]);
+  const initialSpecs = defaultValues?.specs
+    ? Object.entries(defaultValues.specs).map(([label, value]) => ({ label, value }))
+    : [];
+  const [specs, setSpecs] = useState<Array<{ label: string; value: string }>>(initialSpecs);
+
+  const [existingImages, setExistingImages] = useState(defaultValues?.existingImages ?? []);
 
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [previews, setPreviews] = useState<Array<{ file: File; url: string }>>([]);
@@ -72,8 +97,12 @@ function ProductForm({ divisions, brands, action, submitLabel = "Create Product"
     syncFileInput([...previews.map((p) => p.file), ...newFiles]);
   }
 
-  function removeImage(index: number) {
+  function removeNewImage(index: number) {
     syncFileInput(previews.filter((_, i) => i !== index).map((p) => p.file));
+  }
+
+  function removeExistingImage(id: string) {
+    setExistingImages((imgs) => imgs.filter((img) => img.id !== id));
   }
 
   function addSpecRow() {
@@ -92,8 +121,16 @@ function ProductForm({ divisions, brands, action, submitLabel = "Create Product"
     Object.fromEntries(specs.filter((s) => s.label.trim() && s.value.trim()).map((s) => [s.label, s.value])),
   );
 
+  const deleteImageIds = (defaultValues?.existingImages ?? [])
+    .filter((orig) => !existingImages.some((kept) => kept.id === orig.id))
+    .map((img) => img.id);
+
   return (
     <form action={formAction} className="flex max-w-3xl flex-col gap-6">
+      {isEditing ? <input type="hidden" name="id" value={defaultValues!.id} /> : null}
+      {isEditing ? <input type="hidden" name="previousSlug" value={defaultValues!.slug} /> : null}
+      <input type="hidden" name="deleteImageIds" value={JSON.stringify(deleteImageIds)} />
+
       {state.formError ? (
         <p className="bg-danger/10 text-danger rounded-md px-4 py-3 text-sm">{state.formError}</p>
       ) : null}
@@ -135,7 +172,14 @@ function ProductForm({ divisions, brands, action, submitLabel = "Create Product"
 
         <div className="sm:col-span-2">
           <Label htmlFor="summary">Summary</Label>
-          <Input id="summary" name="summary" required className="mt-1.5" placeholder="Short line shown on product cards" />
+          <Input
+            id="summary"
+            name="summary"
+            required
+            defaultValue={defaultValues?.summary}
+            className="mt-1.5"
+            placeholder="Short line shown on product cards"
+          />
           {state.fieldErrors?.summary ? (
             <p className="text-danger mt-1 text-xs">{state.fieldErrors.summary[0]}</p>
           ) : null}
@@ -147,6 +191,7 @@ function ProductForm({ divisions, brands, action, submitLabel = "Create Product"
             id="description"
             name="description"
             rows={5}
+            defaultValue={defaultValues?.description ?? ""}
             className="mt-1.5"
             placeholder="Full detail shown on the product page"
           />
@@ -158,7 +203,15 @@ function ProductForm({ divisions, brands, action, submitLabel = "Create Product"
 
         <div>
           <Label htmlFor="price">Price (USD)</Label>
-          <Input id="price" name="price" type="text" inputMode="decimal" placeholder="Leave blank for 'Contact us for pricing'" className="mt-1.5" />
+          <Input
+            id="price"
+            name="price"
+            type="text"
+            inputMode="decimal"
+            defaultValue={defaultValues?.price ?? ""}
+            placeholder="Leave blank for 'Contact us for pricing'"
+            className="mt-1.5"
+          />
           {state.fieldErrors?.price ? (
             <p className="text-danger mt-1 text-xs">{state.fieldErrors.price[0]}</p>
           ) : null}
@@ -195,7 +248,7 @@ function ProductForm({ divisions, brands, action, submitLabel = "Create Product"
               <button
                 type="button"
                 onClick={() => {
-                  setBrandSelectValue("");
+                  setBrandSelectValue(defaultValues?.brandId ?? "");
                   setNewBrandName("");
                 }}
                 aria-label="Cancel adding new brand"
@@ -239,7 +292,7 @@ function ProductForm({ divisions, brands, action, submitLabel = "Create Product"
           <Select
             id="categoryId"
             name="categoryId"
-            defaultValue=""
+            defaultValue={defaultValues?.categoryId ?? ""}
             disabled={!selectedDivision || selectedDivision.categories.length === 0}
             className="mt-1.5"
           >
@@ -255,11 +308,11 @@ function ProductForm({ divisions, brands, action, submitLabel = "Create Product"
 
       <div className="flex items-center gap-6">
         <label className="flex items-center gap-2 text-sm text-ink">
-          <Checkbox name="featured" />
+          <Checkbox name="featured" defaultChecked={defaultValues?.featured} />
           Featured on homepage
         </label>
         <label className="flex items-center gap-2 text-sm text-ink">
-          <Checkbox name="isActive" defaultChecked />
+          <Checkbox name="isActive" defaultChecked={defaultValues?.isActive ?? true} />
           Active (visible on the live site)
         </label>
       </div>
@@ -308,6 +361,20 @@ function ProductForm({ divisions, brands, action, submitLabel = "Create Product"
       <div>
         <Label>Images</Label>
         <div className="mt-1.5 flex flex-wrap gap-3">
+          {existingImages.map((img) => (
+            <div key={img.id} className="border-border relative size-24 overflow-hidden rounded-md border">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={img.url} alt={img.alt} className="size-full object-cover" />
+              <button
+                type="button"
+                onClick={() => removeExistingImage(img.id)}
+                aria-label="Remove image"
+                className="absolute right-1 top-1 flex size-5 items-center justify-center rounded-full bg-black/60 text-white"
+              >
+                <X className="size-3" aria-hidden="true" />
+              </button>
+            </div>
+          ))}
           {previews.map((p, i) => (
             <div key={p.url} className="border-border relative size-24 overflow-hidden rounded-md border">
               {/* Plain <img>, not next/image — next/image doesn't support
@@ -317,7 +384,7 @@ function ProductForm({ divisions, brands, action, submitLabel = "Create Product"
               <img src={p.url} alt="" className="size-full object-cover" />
               <button
                 type="button"
-                onClick={() => removeImage(i)}
+                onClick={() => removeNewImage(i)}
                 aria-label="Remove image"
                 className="absolute right-1 top-1 flex size-5 items-center justify-center rounded-full bg-black/60 text-white"
               >
