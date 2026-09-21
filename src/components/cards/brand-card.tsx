@@ -6,7 +6,7 @@ export interface BrandCardProps {
   logoSrc: string;
 }
 
-/** Deliberately quiet — a logo wall reads as trust through restraint, not
+/** Deliberately quiet , a logo wall reads as trust through restraint, not
  *  through decoration. No accent bar here; that treatment is reserved for
  *  content cards (industries/products), not third-party brand marks. */
 function BrandCard({ name, logoSrc }: BrandCardProps) {

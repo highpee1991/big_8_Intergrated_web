@@ -1,9 +1,9 @@
-# Big 8 Integrated — Website
+# Big 8 Integrated , Website
 
 ## 1. Project Overview
 
 Big 8 Integrated is a multi-division industrial supplier: one company
-operating across (at least) 8 sectors — oil & gas equipment, heavy equipment
+operating across (at least) 8 sectors , oil & gas equipment, heavy equipment
 (tractors, forklifts, etc.), IT, and medical equipment confirmed so far, with
 4 more divisions to be added once the client confirms them.
 
@@ -13,27 +13,27 @@ operating across (at least) 8 sectors — oil & gas equipment, heavy equipment
 
 | Layer | Choice | Why |
 |---|---|---|
-| Framework | **Next.js 14** (App Router) | React-based, but adds file-based routing, server-side rendering, and built-in image/font optimization — all of which matter for a corporate site that needs to load fast and rank in search. Plain React (client-only) can't do SSR without extra tooling. |
+| Framework | **Next.js 14** (App Router) | React-based, but adds file-based routing, server-side rendering, and built-in image/font optimization , all of which matter for a corporate site that needs to load fast and rank in search. Plain React (client-only) can't do SSR without extra tooling. |
 | Language | **TypeScript** | Catches mistakes (wrong prop types, typos in data) at build time instead of in front of a client. |
 | Styling | **Tailwind CSS** | Utility classes, but every color/font is driven by CSS variables (see §5), so the whole site restyles from one place instead of hunting through components. |
-| Icons | **lucide-react** | Lightweight, consistent icon set (menu, phone, mail, etc.) — no separate image assets needed for icons. |
+| Icons | **lucide-react** | Lightweight, consistent icon set (menu, phone, mail, etc.) , no separate image assets needed for icons. |
 | Hosting | **Vercel** | Built by the same team as Next.js; zero-config deploys straight from GitHub, automatic HTTPS, and a global CDN so the site is fast from anywhere. |
 | Version control | **GitHub** | Where the code lives; every push to `main` auto-deploys to Vercel. |
-| Domain | **GoDaddy** (already purchased) | DNS is pointed at Vercel — GoDaddy just handles the domain registration, Vercel handles serving the site. |
+| Domain | **GoDaddy** (already purchased) | DNS is pointed at Vercel , GoDaddy just handles the domain registration, Vercel handles serving the site. |
 
 **Deliberately not added yet** (planned for later phases, once there's real
 content/features that need them):
-- **Supabase** (Postgres database) — for structured content (products,
+- **Supabase** (Postgres database) , for structured content (products,
   divisions, projects, testimonials) once it needs to be editable without a
   code change.
-- **Cloudinary** — for image hosting/optimization once there are real
+- **Cloudinary** , for image hosting/optimization once there are real
   product/equipment photos to manage at scale, instead of static files in
   `/public`.
-- **Auth, cart, checkout** — explicitly future scope (Version 2+), not part
+- **Auth, cart, checkout** , explicitly future scope (Version 2+), not part
   of the corporate-site launch.
 
 Adding a backend now, before there's real content to manage, would slow down
-today's launch for no benefit — everything it would do, a plain data file
+today's launch for no benefit , everything it would do, a plain data file
 already does at this stage.
 
 ---
@@ -54,9 +54,9 @@ big8-integrated/
 │   │   ├── products/page.tsx    # → "/products" (placeholder)
 │   │   └── contact/page.tsx     # → "/contact" (placeholder)
 │   ├── components/
-│   │   ├── layout/           # Navbar, Footer — used on every page
+│   │   ├── layout/           # Navbar, Footer , used on every page
 │   │   ├── home/             # Hero, Stats, DivisionsGrid, WhyUs, CTA
-│   │   └── ui/                # Button, Badge, Container, WorkInProgress —
+│   │   └── ui/                # Button, Badge, Container, WorkInProgress ,
 │   │                          # small reusable pieces used across sections
 │   └── lib/
 │       └── constants.ts      # ALL editable content: company info, the
@@ -98,7 +98,7 @@ variable:
 
 `tailwind.config.ts` maps Tailwind classes like `bg-brand-blue` or
 `text-navy` to those variables. **No component ever hardcodes a hex color.**
-To restyle the entire site, change a value in `globals.css` — e.g. swapping
+To restyle the entire site, change a value in `globals.css` , e.g. swapping
 the primary color to green is a one-line change (`--color-blue: 47 168 79;`)
 and every button, link, and accent using `brand-blue` updates everywhere,
 instantly. Fonts work the same way via `--font-display` / `--font-body` /
@@ -115,12 +115,12 @@ You already know components, hooks, and JSX. Here's what's different:
   every `page.tsx` is injected as `children`. You never re-import
   Navbar/Footer per page.
 - **Server Components by default.** Every component renders on the server
-  unless you add `"use client"` at the top of the file — new vs. plain React,
+  unless you add `"use client"` at the top of the file , new vs. plain React,
   which is 100% client-side. We only mark a component `"use client"` when it
-  needs browser interactivity — e.g. `Navbar.tsx` uses `useState` for the
+  needs browser interactivity , e.g. `Navbar.tsx` uses `useState` for the
   mobile menu. Everything else stays a Server Component: faster, better SEO.
 - **`next/image` instead of `<img>`.** Auto-optimizes and lazy-loads images.
-- **`next/font`** loads Google Fonts at build time — no render-blocking
+- **`next/font`** loads Google Fonts at build time , no render-blocking
   `<link>` tags, no layout shift.
 - **The `@/` import alias** points at `src/`. `@/components/ui/Button` means
   `src/components/ui/Button.tsx`.

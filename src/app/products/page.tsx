@@ -7,7 +7,7 @@ import { FilteredProductGrid } from "@/features/products/components/filtered-pro
 import { getAllProducts, getProductBrands } from "@/lib/services/products.service";
 import { getDivisions, getAllCategories } from "@/lib/services/industries.service";
 
-export const metadata: Metadata = { title: "Products | Big 8 Intergrated, LLC" };
+export const metadata: Metadata = { title: "Products | Big 8 Intergrated LLC" };
 
 export default async function ProductsPage({
   searchParams,
@@ -22,7 +22,7 @@ export default async function ProductsPage({
     getProductBrands(),
   ]);
 
-  // ProductFiltersBar is a Client Component — pass only plain, serializable
+  // ProductFiltersBar is a Client Component , pass only plain, serializable
   // fields. Division.icon is a component reference, which Server Components
   // are not allowed to hand to Client Components.
   const filterDivisions = divisions.map(({ slug, name }) => ({ slug, name }));
@@ -50,7 +50,7 @@ export default async function ProductsPage({
         {products.length > 0 ? (
           <FilteredProductGrid products={products} />
         ) : (
-          <p className="text-ink-muted">No products available yet — check back soon.</p>
+          <p className="text-ink-muted">No products available yet , check back soon.</p>
         )}
       </Section>
     </main>

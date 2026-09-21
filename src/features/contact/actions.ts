@@ -8,18 +8,18 @@ import { contactFormSchema } from "./schema";
 export interface SubmitInquiryResult {
   success: boolean;
   /** Field-level errors keyed by field name, for the client to show
-   *  under the relevant input — mirrors what React Hook Form expects. */
+   *  under the relevant input , mirrors what React Hook Form expects. */
   fieldErrors?: Partial<Record<keyof typeof contactFormSchema.shape, string[]>>;
   formError?: string;
 }
 
 /**
- * Server Action — runs on the server even though it's called directly
+ * Server Action , runs on the server even though it's called directly
  * from a client component's form submit. Re-validates with the same
  * Zod schema the client uses (never trust client-side validation alone),
  * then writes a row to the Inquiry table.
  *
- * `productId` is optional and unused by the general Contact page today —
+ * `productId` is optional and unused by the general Contact page today ,
  * it's there so a future "Request a Quote" button on a product detail
  * page can call this same action, passing which product the inquiry is
  * about, without needing a second, near-duplicate action.
@@ -57,14 +57,14 @@ export async function submitInquiry(
       },
     });
   } catch {
-    // Deliberately generic — never leak DB error details to the client.
+    // Deliberately generic , never leak DB error details to the client.
     return {
       success: false,
       formError: "Something went wrong sending your message. Please try again, or reach out directly using the contact details on this page.",
     };
   }
 
-  // The inquiry is already saved at this point — that's the source of truth.
+  // The inquiry is already saved at this point , that's the source of truth.
   // Email is a best-effort notification on top of it: if Resend has a hiccup,
   // the submission still succeeded and is sitting in the database either way,
   // so we log the email error instead of failing the whole submission.
@@ -91,14 +91,14 @@ export async function submitInquiry(
       if (error) {
         console.error("Resend rejected the notification (inquiry was still saved):", error);
       } else {
-        console.log(`Inquiry notification sent — Resend id: ${data?.id}`);
+        console.log(`Inquiry notification sent , Resend id: ${data?.id}`);
       }
     } catch (err) {
       console.error("Resend notification threw (inquiry was still saved):", err);
     }
   } else {
     console.warn(
-      "CONTACT_NOTIFY_EMAIL is not set — inquiry saved to the database, but no notification email was sent."
+      "CONTACT_NOTIFY_EMAIL is not set , inquiry saved to the database, but no notification email was sent."
     );
   }
 

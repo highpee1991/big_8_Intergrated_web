@@ -17,7 +17,7 @@ export { Label };
 
 
 
-/** Small, consistent validation-message treatment — used under any form
+/** Small, consistent validation-message treatment , used under any form
  *  field. role="alert" so screen readers announce it when it appears. */
 function FieldError({ children }: { children?: React.ReactNode }) {
   if (!children) return null;

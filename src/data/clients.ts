@@ -1,7 +1,7 @@
 import type { Client } from "@/types/content";
 
 /**
- * Real clients — confirmed by the user, not placeholder. Logo files live
+ * Real clients , confirmed by the user, not placeholder. Logo files live
  * in public/images/clients/.
  */
 export const clients: Client[] = [

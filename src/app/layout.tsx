@@ -5,9 +5,9 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 
 export const metadata: Metadata = {
-  title: "Big 8 Intergrated, LLC",
+  title: "Big 8 Intergrated LLC",
   description:
-    "Big 8 Intergrated, LLC - industrial equipment, oilfield services, and technology solutions.",
+    "Big 8 Intergrated LLC - industrial equipment, oilfield services, and technology solutions.",
 };
 
 export default function RootLayout({

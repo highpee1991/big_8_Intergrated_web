@@ -4,7 +4,7 @@
 // so the DB has no dependency on React/lucide-react. This map resolves that
 // string back to the actual icon component wherever it's rendered.
 //
-// To add a new division icon: import it below and add it to the map — the
+// To add a new division icon: import it below and add it to the map , the
 // string in the database (Division.icon / seed.ts) must match the key exactly.
 import {
   Fuel,

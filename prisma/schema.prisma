@@ -1,20 +1,20 @@
 // prisma/schema.prisma
 //
-// Big 8 Integrated — data model
+// Big 8 Integrated , data model
 //
 // Structure: Division -> Category (optional) -> Product -> ProductImage
 // e.g. Oil & Gas Equipment -> Valves -> "2-inch Gate Valve" -> photos
 //
 // Notes:
 // - `images` on Product is a relation (ProductImage[]), not image1/image2/image3
-//   columns — a product can have 1 photo or 30 without ever touching this file again.
+//   columns , a product can have 1 photo or 30 without ever touching this file again.
 // - `price` is optional. When null, the UI shows "Contact us for pricing".
-// - `specs` is a Json field (flexible key/value technical specs) — different
+// - `specs` is a Json field (flexible key/value technical specs) , different
 //   product categories (a valve vs. a forklift) can have completely different
 //   spec sheets without needing a fixed set of columns.
-// - `category` is optional on Product — divisions that don't have a nav
+// - `category` is optional on Product , divisions that don't have a nav
 //   sub-menu yet (e.g. Medical) can leave products uncategorized until they do.
-// - Division doubles as your existing "Industries" concept — same data as
+// - Division doubles as your existing "Industries" concept , same data as
 //   src/data/industries.ts, now backed by the DB.
 
 generator client {
@@ -41,7 +41,7 @@ model Division {
 }
 
 // Sub-menu items under a division in the Products nav, e.g. Oil & Gas ->
-// Valves / Actuators / Welding Material. Optional on Product — not every
+// Valves / Actuators / Welding Material. Optional on Product , not every
 // division needs this layer yet.
 model Category {
   id         String    @id @default(cuid())

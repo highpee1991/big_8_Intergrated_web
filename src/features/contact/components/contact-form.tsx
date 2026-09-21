@@ -14,7 +14,7 @@ import { submitInquiry } from "@/features/contact/actions";
 
 export interface ContactFormProps {
   /** Set when this form is reused for a "Request a Quote" flow from a
-   *  specific product page — ties the inquiry to that product. Omitted
+   *  specific product page , ties the inquiry to that product. Omitted
    *  on the general Contact page. */
   productId?: string;
 }
@@ -63,7 +63,7 @@ function ContactForm({ productId }: ContactFormProps) {
         <CheckCircle2 className="size-8 text-success" aria-hidden="true" />
         <p className="font-display text-lg font-semibold text-ink">Message sent</p>
         <p className="max-w-sm text-sm text-muted">
-          Thanks for reaching out — we&apos;ll get back to you shortly.
+          Thanks for reaching out , we&apos;ll get back to you shortly.
         </p>
         <Button variant="outline" size="sm" onClick={() => setSubmitted(false)} className="mt-2">
           Send another message

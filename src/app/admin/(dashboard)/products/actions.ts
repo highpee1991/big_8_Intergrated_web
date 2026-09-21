@@ -26,8 +26,8 @@ export async function deleteProduct(id: string) {
   revalidatePath("/");
 }
 
-// Resolves the product's brand: either an existing brand's id, or — if the
-// admin used the "+ Add new brand" option — creates the brand on the fly
+// Resolves the product's brand: either an existing brand's id, or , if the
+// admin used the "+ Add new brand" option , creates the brand on the fly
 // and returns its new id. upsert (by slug) means submitting the same new
 // brand name twice never creates a duplicate.
 async function resolveBrandId(brandId: string | undefined, newBrandName: string | null) {
@@ -38,7 +38,7 @@ async function resolveBrandId(brandId: string | undefined, newBrandName: string 
       create: {
         slug: slugify(newBrandName),
         name: newBrandName.trim(),
-        // No real logo yet for a brand created inline — a plain placeholder
+        // No real logo yet for a brand created inline , a plain placeholder
         // keeps the required field satisfied; swap it for a real logo
         // later directly in Supabase, or once a "manage brands" admin page exists.
         logoUrl: "/images/brands/placeholder.png",
@@ -141,7 +141,7 @@ export async function createProduct(
     if (typeof err === "object" && err !== null && "code" in err && err.code === "P2002") {
       return {
         success: false,
-        fieldErrors: { slug: ["This slug is already in use — choose a different one."] },
+        fieldErrors: { slug: ["This slug is already in use , choose a different one."] },
         formError: "Please fix the errors below.",
       };
     }
@@ -204,7 +204,7 @@ export async function updateProduct(
     }
   }
 
-  // Existing images the admin removed in the UI — deleted explicitly here
+  // Existing images the admin removed in the UI , deleted explicitly here
   // rather than replacing the whole image set, so images left untouched
   // keep their original id/position instead of being deleted and recreated.
   let deleteImageIds: string[] = [];
@@ -274,7 +274,7 @@ export async function updateProduct(
     if (typeof err === "object" && err !== null && "code" in err && err.code === "P2002") {
       return {
         success: false,
-        fieldErrors: { slug: ["This slug is already in use — choose a different one."] },
+        fieldErrors: { slug: ["This slug is already in use , choose a different one."] },
         formError: "Please fix the errors below.",
       };
     }

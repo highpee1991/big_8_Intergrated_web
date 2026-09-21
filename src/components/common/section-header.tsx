@@ -2,7 +2,7 @@ import * as React from "react";
 import { cn } from "@/lib/utils";
 
 export interface SectionHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
-  /** Short mono-set label above the heading, e.g. "OUR DIVISIONS". Optional —
+  /** Short mono-set label above the heading, e.g. "OUR DIVISIONS". Optional ,
    *  only use when it encodes real information (a category, a step number),
    *  not as decoration. */
   eyebrow?: string;

@@ -2,7 +2,7 @@
  * JS/TS mirror of the design tokens defined in `src/app/globals.css`.
  *
  * globals.css is the canonical source of truth for CSS/Tailwind usage
- * (bg-primary, text-accent, rounded-md, etc.) — use Tailwind classes in
+ * (bg-primary, text-accent, rounded-md, etc.) , use Tailwind classes in
  * components whenever possible.
  *
  * This file exists only for the contexts where a CSS variable can't
@@ -38,7 +38,7 @@ export const colors = {
   },
 } as const;
 
-/** The four brand hues in ribbon order — for the "interlock" motif
+/** The four brand hues in ribbon order , for the "interlock" motif
  *  (division card accents, section-rule gradients). */
 export const interlock = [
   colors.brand.blue,
@@ -60,7 +60,7 @@ export const shadow = {
   lg: "0 12px 32px rgba(18, 22, 28, 0.10)",
 } as const;
 
-/** Motion should whisper — reuse these durations/easing in every
+/** Motion should whisper , reuse these durations/easing in every
  *  Framer Motion variant so animation timing stays consistent. */
 export const motion = {
   duration: {

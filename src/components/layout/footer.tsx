@@ -29,7 +29,7 @@ async function Footer() {
             <Link href="/" className="flex items-center gap-2.5">
               <Image
                 src="/images/brand/logo.png"
-                alt="Big 8 intergrated, LLC"
+                alt="Big 8 Intergrated LLC"
                 width={28}
                 height={28}
                 className="h-7 w-7"
@@ -128,7 +128,7 @@ async function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-paper/10 text-paper/50 flex flex-col gap-3 border-t py-6 text-xs sm:flex-row sm:items-center sm:justify-between">
-          <p>&copy; {year} Big 8 Intergrated, LLC. All rights reserved.</p>
+          <p>&copy; {year} Big 8 Intergrated LLC. All rights reserved.</p>
 
           <div className="flex items-center gap-4">
             <p>Houston, Texas, USA</p>

@@ -2,11 +2,11 @@
 //
 // The (dashboard) route group means this layout applies to every admin
 // page EXCEPT /admin/login, which lives outside this group and therefore
-// never gets the sidebar — the clean, idiomatic way to do this in the App
+// never gets the sidebar , the clean, idiomatic way to do this in the App
 // Router, instead of trying to detect the current path inside a layout
 // (layouts don't receive pathname directly).
 //
-// Auth check here is defense-in-depth, not the primary guard — proxy.ts
+// Auth check here is defense-in-depth, not the primary guard , proxy.ts
 // already redirects unauthenticated requests before this layout even runs.
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";

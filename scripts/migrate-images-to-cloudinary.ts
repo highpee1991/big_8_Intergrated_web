@@ -7,7 +7,7 @@
 //      (e.g. "/images/products/valve.png") with the real Cloudinary URL.
 //
 // After this runs, `npx prisma db seed` pushes the new URLs into the
-// database — seed.ts stays the single source of truth, same pattern as
+// database , seed.ts stays the single source of truth, same pattern as
 // every other data change in this project.
 //
 // Re-running is safe: each upload uses the filename (without extension) as
@@ -34,7 +34,7 @@ async function uploadFolder(localFolder: string, cloudinaryFolder: string) {
   const map = new Map<string, string>(); // filename -> Cloudinary secure_url
 
   if (!fs.existsSync(dir)) {
-    console.warn(`Skipping ${localFolder} — folder not found.`);
+    console.warn(`Skipping ${localFolder} , folder not found.`);
     return map;
   }
 

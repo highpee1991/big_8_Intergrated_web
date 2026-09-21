@@ -59,7 +59,7 @@ function ProductForm({ divisions, brands, action, submitLabel = "Create Product"
 
   const [title, setTitle] = useState(defaultValues?.title ?? "");
   const [slug, setSlug] = useState(defaultValues?.slug ?? "");
-  // In edit mode, the slug is already live at a real URL — don't let
+  // In edit mode, the slug is already live at a real URL , don't let
   // editing the title silently regenerate it out from under an existing page.
   const [slugTouched, setSlugTouched] = useState(isEditing);
   const [divisionId, setDivisionId] = useState(defaultValues?.divisionId ?? "");
@@ -196,7 +196,7 @@ function ProductForm({ divisions, brands, action, submitLabel = "Create Product"
             placeholder="Full detail shown on the product page"
           />
           <p className="text-muted mt-1 text-xs">
-            Supports Markdown formatting — <code>**bold text**</code>, and bullet lists starting each line with{" "}
+            Supports Markdown formatting , <code>**bold text**</code>, and bullet lists starting each line with{" "}
             <code>* </code>.
           </p>
         </div>
@@ -377,7 +377,7 @@ function ProductForm({ divisions, brands, action, submitLabel = "Create Product"
           ))}
           {previews.map((p, i) => (
             <div key={p.url} className="border-border relative size-24 overflow-hidden rounded-md border">
-              {/* Plain <img>, not next/image — next/image doesn't support
+              {/* Plain <img>, not next/image , next/image doesn't support
                   blob: URLs (what URL.createObjectURL produces for a local
                   file preview), only http(s) sources. */}
               {/* eslint-disable-next-line @next/next/no-img-element */}

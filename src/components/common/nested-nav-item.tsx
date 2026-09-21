@@ -128,7 +128,7 @@ function NestedNavItem({ item, variant, depth = 0, onNavigate }: NestedNavItemPr
     );
   }
 
-  // variant === "list" — mobile accordion row, recursive for any depth
+  // variant === "list" , mobile accordion row, recursive for any depth
   return (
     <li>
       <div className="flex items-center" style={{ paddingLeft: depth * 12 }}>

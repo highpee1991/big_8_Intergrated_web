@@ -17,8 +17,8 @@ import {
 } from "lucide-react";
 
 /**
- * Central nav content. Editing menu structure — adding a division, adding
- * a nested item under a card — never touches component code, only this
+ * Central nav content. Editing menu structure , adding a division, adding
+ * a nested item under a card , never touches component code, only this
  * file. See NavCardItem.children for how nesting works: any card can have
  * its own sub-list, at any depth, and both the desktop mega menu and the
  * mobile accordion render it the same way via NestedNavItem.
@@ -27,7 +27,7 @@ import {
 export interface NavChild {
   label: string;
   href: string;
-  /** Children can nest further — NestedNavItem renders recursively. */
+  /** Children can nest further , NestedNavItem renders recursively. */
   children?: NavChild[];
 }
 
@@ -178,7 +178,7 @@ export const NAV_LINKS: NavLink[] = [
 
 
 /** Finds the label/description for any href defined in NAV_LINKS,
- *  including nested children — used by the catch-all placeholder pages. */
+ *  including nested children , used by the catch-all placeholder pages. */
 export function findNavLabel(href: string): { label: string; description?: string } | null {
   for (const link of NAV_LINKS) {
     if (link.href === href) return { label: link.label };

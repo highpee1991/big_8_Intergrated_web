@@ -7,7 +7,7 @@ export interface CtaSectionProps {
   content: HeroContent;
 }
 
-/** Reuses the same hero CTA copy/links for the closing call-to-action —
+/** Reuses the same hero CTA copy/links for the closing call-to-action ,
  *  keeps the two asks on the page consistent rather than introducing a
  *  third, uncoordinated message. */
 function CtaSection({ content }: CtaSectionProps) {

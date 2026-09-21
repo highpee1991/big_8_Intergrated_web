@@ -37,7 +37,7 @@ function Navbar() {
           >
             <Image
               src="/images/brand/logo.png"
-              alt="Big 8 Intergrated, LLC"
+              alt="Big 8 Intergrated LLC"
               width={32}
               height={32}
               style={{ height: "auto" }}
@@ -155,7 +155,7 @@ function Navbar() {
   );
 }
 
-/** Desktop nav item — sliding hover pill (layoutId glide, not an instant
+/** Desktop nav item , sliding hover pill (layoutId glide, not an instant
  *  swap), persistent active underline, and the mega menu trigger. */
 function DesktopNavItem({
   link,

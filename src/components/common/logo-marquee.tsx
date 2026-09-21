@@ -5,7 +5,7 @@ import type { Brand } from "@/types/content";
 
 export interface LogoMarqueeProps {
   items: Brand[];
-  /** Seconds for one full loop — lower = faster. */
+  /** Seconds for one full loop , lower = faster. */
   speed?: number;
 }
 

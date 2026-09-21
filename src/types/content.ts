@@ -28,7 +28,7 @@ export interface ProductBrand {
   logoUrl: string;
 }
 
-// Lightweight shape for cards/grids — every product listing page uses this.
+// Lightweight shape for cards/grids , every product listing page uses this.
 export interface ProductSummary {
   id: string;
   slug: string; // -> /products/{slug}
@@ -44,7 +44,7 @@ export interface ProductSummary {
   brandName?: string;
 }
 
-// Full shape for a single product detail page — everything ProductSummary
+// Full shape for a single product detail page , everything ProductSummary
 // has, plus the gallery, specs, description, and brand.
 export interface ProductDetail extends ProductSummary {
   description: string | null;

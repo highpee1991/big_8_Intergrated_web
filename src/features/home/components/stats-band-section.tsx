@@ -1,6 +1,6 @@
 // src/features/home/components/stats-band-section.tsx
 //
-// The homepage's one deliberate high-contrast moment — dark (tone="ink"),
+// The homepage's one deliberate high-contrast moment , dark (tone="ink"),
 // large mono-numeral stats. Per design direction: spend the boldness in
 // exactly one place and keep everything else disciplined. Reuses
 // StatsGrid's existing tone="dark" variant rather than building a new
@@ -19,7 +19,7 @@ function StatsBandSection({ stats }: StatsBandSectionProps) {
     <Section tone="ink">
       <Reveal>
         <p className="mb-8 font-mono text-xs font-medium uppercase tracking-widest text-paper/50">
-          Big 8 Intergrated, by the numbers
+          Big 8 Intergrated by the numbers
         </p>
         <StatsGrid stats={stats} columns={4} tone="dark" />
       </Reveal>

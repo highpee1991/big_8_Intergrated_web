@@ -1,6 +1,6 @@
 // src/lib/services/products.service.ts
 //
-// Product data access — backed by Postgres via Prisma. Two return shapes:
+// Product data access , backed by Postgres via Prisma. Two return shapes:
 //   - ProductSummary: lightweight, for grids/cards (getFeaturedProducts,
 //     getProductsByDivision, getProductsByCategory)
 //   - ProductDetail: everything, for a single /products/[slug] page
@@ -10,7 +10,7 @@ import { formatPrice } from "@/lib/format";
 import { Prisma } from "@/generated/prisma/client";
 import type { ProductSummary, ProductDetail } from "@/types/content";
 
-// Shared select — every list query pulls exactly what ProductSummary needs
+// Shared select , every list query pulls exactly what ProductSummary needs
 // and nothing more, so listing pages stay fast even as the catalog grows.
 const summarySelect = {
   id: true,
@@ -83,7 +83,7 @@ export async function getAllProducts(): Promise<ProductSummary[]> {
   return rows.map(toSummary);
 }
 
-// Powers /products/[slug] — the full detail page.
+// Powers /products/[slug] , the full detail page.
 export async function getProductBySlug(slug: string): Promise<ProductDetail | null> {
   const row = await prisma.product.findUnique({
     where: { slug, isActive: true },
@@ -116,7 +116,7 @@ export async function getProductBySlug(slug: string): Promise<ProductDetail | nu
   };
 }
 
-// Used by /products filters — only brands that actually have at least one
+// Used by /products filters , only brands that actually have at least one
 // product, so the dropdown never shows an option with zero results.
 export async function getProductBrands(): Promise<
   Array<{ slug: string; name: string }>
@@ -180,7 +180,7 @@ export async function getAllProductsForAdmin(): Promise<AdminProductRow[]> {
   }));
 }
 
-// Used by the admin product form's Brand dropdown — unlike getProductBrands()
+// Used by the admin product form's Brand dropdown , unlike getProductBrands()
 // (used for the public filter bar), this includes brands with zero products
 // yet, since the admin needs to be able to assign a brand to a brand-new product.
 export async function getAllBrandsForAdmin(): Promise<Array<{ id: string; slug: string; name: string }>> {
@@ -191,7 +191,7 @@ export async function getAllBrandsForAdmin(): Promise<Array<{ id: string; slug: 
   return rows;
 }
 
-// Powers /admin/products/[id]/edit — raw, editable shape (not the
+// Powers /admin/products/[id]/edit , raw, editable shape (not the
 // customer-facing ProductDetail): actual IDs for division/category/brand
 // (not just names), raw price/specs, and each image's own id (needed so
 // the edit form can mark specific existing images for deletion).

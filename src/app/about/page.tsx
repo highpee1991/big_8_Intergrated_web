@@ -14,9 +14,9 @@ import { WhyChooseUsSection } from "@/features/home/components/why-choose-us-sec
 import { CtaSection } from "@/features/home/components/cta-section";
 
 export const metadata: Metadata = {
-  title: "About Us | Big 8 Intergrated, LLC",
+  title: "About Us | Big 8 Intergrated LLC",
   description:
-    "Big 8 Intergrated, LLC — Better Solution for a Better World. Learn about our story, mission, and the eight divisions we serve.",
+    "Big 8 Intergrated LLC, Better Solution for a Better World. Learn about our story, mission, and the eight divisions we serve.",
 };
 
 export default async function AboutPage() {
@@ -32,7 +32,7 @@ export default async function AboutPage() {
       <PageHeader
         eyebrow="About Us"
         title={company.tagline}
-        description={`${company.legalName} — ${company.city}, ${company.state}`}
+        description={`${company.legalName}, ${company.city}, ${company.state}`}
       />
 
       <StorySection company={company} />

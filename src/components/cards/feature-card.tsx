@@ -8,7 +8,7 @@ export interface FeatureCardProps {
   description: string;
 }
 
-/** Used in "Why Choose Us" — a quiet, icon-led card with no accent bar,
+/** Used in "Why Choose Us" , a quiet, icon-led card with no accent bar,
  *  kept deliberately calmer than the division/product/brand cards. */
 function FeatureCard({ icon: Icon, title, description }: FeatureCardProps) {
   return (

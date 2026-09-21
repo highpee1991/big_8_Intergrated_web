@@ -9,7 +9,7 @@ export interface PageHeaderProps {
 
 /**
  * Standard top-of-page header for interior pages (About, Industries,
- * Products, Contact...) — one component instead of every page rolling
+ * Products, Contact...) , one component instead of every page rolling
  * its own hero-ish opener. Deliberately lighter than the homepage
  * HeroSection: no dark background, no circular image, just a clean,
  * consistent entry point.

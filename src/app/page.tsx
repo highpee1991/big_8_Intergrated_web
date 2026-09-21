@@ -19,7 +19,7 @@ import { getRandomItems } from "@/lib/array";
 /**
  * The page stays thin: fetch everything through the services layer, then
  * hand typed data down to dumb section components. No business logic and
- * no direct data/ imports here — see src/lib/services/.
+ * no direct data/ imports here , see src/lib/services/.
  */
 export default async function HomePage() {
   const [hero, trustedIndustries, whyChooseUs, divisions, company, products, brands, clients] =

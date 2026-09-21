@@ -1,12 +1,12 @@
 // src/lib/prisma.ts
 //
 // The single, shared Prisma Client instance for the whole app.
-// Import { prisma } from "@/lib/prisma" anywhere you need to query the database —
+// Import { prisma } from "@/lib/prisma" anywhere you need to query the database ,
 // never instantiate `new PrismaClient()` anywhere else. Next.js hot-reloads
 // modules in dev, which would otherwise spin up a new client (and a new DB
-// connection pool) on every file save — the globalThis cache below prevents that.
+// connection pool) on every file save , the globalThis cache below prevents that.
 //
-// Prisma 7 requires an explicit driver adapter — this uses the pooled
+// Prisma 7 requires an explicit driver adapter , this uses the pooled
 // DATABASE_URL (port 6543 on Supabase), which is correct for a serverless/
 // edge-friendly runtime like Next.js on Vercel.
 import { PrismaClient } from "@/generated/prisma/client";

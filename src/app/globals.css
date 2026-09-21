@@ -15,9 +15,9 @@
   --color-primary-foreground: #ffffff;
   --color-secondary: #3d4a5c;    /* neutral structural slate (not brand-derived) */
   --color-secondary-foreground: #ffffff;
-  --color-accent: #227081;       /* the logo's green→blue seam blend — the "interlock" */
+  --color-accent: #227081;       /* the logo's green→blue seam blend , the "interlock" */
   --color-accent-foreground: #ffffff;
-  --color-accent-on-dark: #2e96ac; /* same seam hue, undeepened — the deepened value
+  --color-accent-on-dark: #2e96ac; /* same seam hue, undeepened , the deepened value
                                        only clears AA (4.5:1) on light surfaces; this
                                        is for text/labels on --color-ink backgrounds */
   --color-success: #0f7a3c;      /* deepened logo green */
@@ -35,9 +35,9 @@
   --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
 
   /* --- Radius: precise, not playful --- */
-  --radius-sm: 0.375rem;   /* 6px  — inputs, small badges */
-  --radius-md: 0.5rem;     /* 8px  — buttons, cards */
-  --radius-lg: 0.75rem;    /* 12px — large panels, modals */
+  --radius-sm: 0.375rem;   /* 6px  , inputs, small badges */
+  --radius-md: 0.5rem;     /* 8px  , buttons, cards */
+  --radius-lg: 0.75rem;    /* 12px , large panels, modals */
   --radius-pill: 999px;    /* tags, status pills only */
 
   /* --- Shadow: one soft ambient elevation, used sparingly --- */
@@ -126,7 +126,7 @@ h1, h2, h3, h4, h5, h6 {
   color: white;
 }
 
-/* Visible focus state everywhere — WCAG requirement, never remove */
+/* Visible focus state everywhere , WCAG requirement, never remove */
 :focus-visible {
   outline: 2px solid var(--color-focus-ring);
   outline-offset: 2px;

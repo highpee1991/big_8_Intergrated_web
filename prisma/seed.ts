@@ -1,7 +1,7 @@
 // prisma/seed.ts
 //
 // One-time (and re-runnable) script that loads your existing static data
-// (src/data/*.ts) into the database. Safe to run multiple times — every
+// (src/data/*.ts) into the database. Safe to run multiple times , every
 // write uses `upsert`, so re-running just updates existing rows instead of
 // duplicating them.
 //
@@ -14,7 +14,7 @@ const adapter = new PrismaPg({ connectionString: process.env.DATABASE_URL });
 const prisma = new PrismaClient({ adapter });
 
 // --- Divisions (from src/data/industries.ts) --------------------------------
-// Icon names match lucide-react export names exactly — the frontend looks
+// Icon names match lucide-react export names exactly , the frontend looks
 // these up in an icon map component-side (built in a later step).
 const divisions = [
   {
@@ -69,7 +69,7 @@ const divisions = [
 ];
 
 // --- Categories (matching the Products nav sub-menu) ------------------------
-// Only Oil & Gas and Heavy Equipment have sub-menus in the nav right now —
+// Only Oil & Gas and Heavy Equipment have sub-menus in the nav right now ,
 // add more here anytime a division grows one. Products in divisions without
 // categories simply leave categorySlug unset.
 const categories = [
@@ -114,7 +114,7 @@ const brands = [
 
 // --- Products (from src/data/products.ts) -----------------------------------
 // NOTE: divisionSlug values below are normalized to match real division
-// slugs above — several in the original static file didn't match anything
+// slugs above , several in the original static file didn't match anything
 // (e.g. "Custom Equipment", "Heavy Equipment" with capitals/spaces).
 const products = [
   {
@@ -136,7 +136,7 @@ const products = [
     title: "Ethernet Cable",
     summary: "Stripped networking cable with multi-conductor gauge options for enterprise wiring.",
     description:
-      "A large wooden spool (cable reel) loaded with thick, gray cable wound into many neat vertical coils, along with stripped cable segments showing exposed multicolored inner wires — available with labeled cable types and gauges to match your infrastructure needs.",
+      "A large wooden spool (cable reel) loaded with thick, gray cable wound into many neat vertical coils, along with stripped cable segments showing exposed multicolored inner wires , available with labeled cable types and gauges to match your infrastructure needs.",
     divisionSlug: "information-technology",
     images: [{ url: "/images/products/ethernet_cable.png", alt: "Ethernet cable reel" }],
   },
@@ -250,7 +250,7 @@ const products = [
     title: "Yale NTA-SB Turret Forklift",
     summary: "Very narrow aisle turret truck for high-bay warehouse operations.",
     description:
-      "The Yale NTA-SB turret truck very narrow aisle series provides the ergonomics, stability and performance necessary for maximum productivity in high-bay warehouses — built for ultimate performance, service, and dependability.",
+      "The Yale NTA-SB turret truck very narrow aisle series provides the ergonomics, stability and performance necessary for maximum productivity in high-bay warehouses , built for ultimate performance, service, and dependability.",
     specs: {
       "Model Numbers": "NTA030/035SB",
       Capacity: "3,000–3,500 lbs",
@@ -459,7 +459,7 @@ const products = [
     title: "Generac Standby Generator, 22kW | WiFi Enabled",
     summary: "One of the most powerful air-cooled home standby generators available.",
     description:
-      "One of the most powerful air-cooled generators on the market today, the Guardian Series 22kW automatic home standby generator can provide whole-house backup power for many homes — with the lowest cost per kilowatt of any air-cooled home standby generator.",
+      "One of the most powerful air-cooled generators on the market today, the Guardian Series 22kW automatic home standby generator can provide whole-house backup power for many homes , with the lowest cost per kilowatt of any air-cooled home standby generator.",
     specs: {
       "Serial Number": "G0070420",
       "Oil Filter P/N": "070185ES",
@@ -607,7 +607,7 @@ async function main() {
   for (const c of categories) {
     const divisionId = divisionMap.get(c.divisionSlug);
     if (!divisionId) {
-      console.warn(`  Skipping category "${c.slug}" — no division found for "${c.divisionSlug}"`);
+      console.warn(`  Skipping category "${c.slug}" , no division found for "${c.divisionSlug}"`);
       continue;
     }
     const row = await prisma.category.upsert({
@@ -633,7 +633,7 @@ async function main() {
   for (const p of products) {
     const divisionId = divisionMap.get(p.divisionSlug);
     if (!divisionId) {
-      console.warn(`  Skipping "${p.slug}" — no division found for "${p.divisionSlug}"`);
+      console.warn(`  Skipping "${p.slug}" , no division found for "${p.divisionSlug}"`);
       continue;
     }
     const brandId = p.brandSlug ? brandMap.get(p.brandSlug) : undefined;

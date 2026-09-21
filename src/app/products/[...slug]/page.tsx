@@ -26,7 +26,7 @@ import {
 } from "@/lib/services/products.service";
 import { getCategoryBySlug, getDivisionBySlug } from "@/lib/services/industries.service";
 
-// Statically generate every product page at build time — new products added
+// Statically generate every product page at build time , new products added
 // later still work fine, Next just renders them on-demand on first visit.
 export async function generateStaticParams() {
   const slugs = await getAllProductSlugs();
@@ -48,7 +48,7 @@ export async function generateMetadata({
   if (!product) return {};
 
   return {
-    title: `${product.title} | Big 8 Intergrated, LLC`,
+    title: `${product.title} | Big 8 Intergrated LLC`,
     description: product.summary,
   };
 }
@@ -65,7 +65,7 @@ export default async function ProductsSlugPage({
     if (!firstSegment) notFound();
 
     // A single segment could be a division (e.g. /products/medical, no
-    // category yet) or a specific product's flat slug — check division
+    // category yet) or a specific product's flat slug , check division
     // first since division slugs are a small, known set.
     const division = await getDivisionBySlug(firstSegment);
     if (division) return <DivisionListing divisionSlug={firstSegment} />;
@@ -119,7 +119,7 @@ async function DivisionListing({ divisionSlug }: { divisionSlug: string }) {
             ))}
           </div>
         ) : (
-          <p className="text-ink-muted">No products in this division yet — check back soon.</p>
+          <p className="text-ink-muted">No products in this division yet , check back soon.</p>
         )}
       </Section>
     </main>
@@ -254,7 +254,7 @@ async function CategoryListing({
             ))}
           </div>
         ) : (
-          <p className="text-ink-muted">No products in this category yet — check back soon.</p>
+          <p className="text-ink-muted">No products in this category yet , check back soon.</p>
         )}
       </Section>
     </main>

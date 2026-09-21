@@ -1,6 +1,6 @@
 // src/lib/services/industries.service.ts
 //
-// Division ("industry") data access — now backed by Postgres via Prisma
+// Division ("industry") data access , now backed by Postgres via Prisma
 // instead of the static src/data/industries.ts file. Function names and
 // return shapes match the original static-data version on purpose, so
 // every component that already calls getDivisions()/getDivisionBySlug()
@@ -36,9 +36,9 @@ export async function getDivisionBySlug(slug: string): Promise<Division | undefi
   };
 }
 
-// Used by the Products nav mega-menu — each division comes back with its
+// Used by the Products nav mega-menu , each division comes back with its
 // categories attached (e.g. Oil & Gas -> [Valves, Actuators, Welding Material]).
-// Divisions with no categories yet simply return an empty array, not an error —
+// Divisions with no categories yet simply return an empty array, not an error ,
 // the nav renders them as a flat link instead of a dropdown.
 export async function getDivisionsWithCategories(): Promise<Division[]> {
   const rows = await prisma.division.findMany({
@@ -79,7 +79,7 @@ export async function getCategoryBySlug(slug: string): Promise<Category | undefi
   };
 }
 
-// Powers /industries/[slug] — one division plus its categories (if any),
+// Powers /industries/[slug] , one division plus its categories (if any),
 // e.g. Oil & Gas -> [Valves, Actuators, Welding Material]. More efficient
 // than fetching all divisions when only one is needed.
 export async function getDivisionWithCategoriesBySlug(
@@ -107,7 +107,7 @@ export async function getDivisionWithCategoriesBySlug(
   };
 }
 
-// Flat list of every category across all divisions — used by the /products
+// Flat list of every category across all divisions , used by the /products
 // filter bar. getDivisionsWithCategories() is for the nav (nested by
 // division); this is for a flat dropdown of all category options at once.
 export async function getAllCategories(): Promise<Category[]> {

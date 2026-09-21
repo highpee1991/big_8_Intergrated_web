@@ -5,7 +5,7 @@
 // separate from actions.ts so the template can be reused later (e.g. an
 // auto-reply to the submitter) without duplicating this formatting logic.
 //
-// Both a plain-text and an HTML version are generated — HTML is what most
+// Both a plain-text and an HTML version are generated , HTML is what most
 // clients render, but some strip HTML or fail to load it, so text is a
 // genuine fallback, not just a formality. Both explicitly label every field,
 // including "Message:", so nothing runs together regardless of how a client

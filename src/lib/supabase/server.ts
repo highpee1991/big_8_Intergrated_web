@@ -1,9 +1,9 @@
 // src/lib/supabase/server.ts
 //
-// Server-side Supabase client — used in Server Components, Server Actions,
+// Server-side Supabase client , used in Server Components, Server Actions,
 // and Route Handlers. Reads/writes the session via cookies. The setAll
 // try/catch is intentional: Server Components can't write cookies (only
-// read them) — proxy.ts is what actually persists a refreshed session;
+// read them) , proxy.ts is what actually persists a refreshed session;
 // this just needs to not crash when called from a context that can't write.
 import { createServerClient } from "@supabase/ssr";
 import { cookies } from "next/headers";
@@ -25,7 +25,7 @@ export async function createClient() {
               cookieStore.set(name, value, options),
             );
           } catch {
-            // Called from a Server Component — proxy.ts handles session refresh.
+            // Called from a Server Component , proxy.ts handles session refresh.
           }
         },
       },

@@ -28,7 +28,7 @@ export default async function AdminProductsPage() {
       <div className="border-border bg-card mt-6 overflow-hidden rounded-lg border">
         {products.length === 0 ? (
           <p className="text-ink-muted p-8 text-center text-sm">
-            No products yet — click &quot;New Product&quot; to add your first one.
+            No products yet , click &quot;New Product&quot; to add your first one.
           </p>
         ) : (
           <table className="w-full text-sm">
@@ -70,7 +70,7 @@ export default async function AdminProductsPage() {
                       <span className="text-muted"> / {product.categoryName}</span>
                     ) : null}
                   </td>
-                  <td className="text-ink-muted px-5 py-3">{product.brandName ?? "—"}</td>
+                  <td className="text-ink-muted px-5 py-3">{product.brandName ?? ","}</td>
                   <td className="text-ink-muted px-5 py-3">{product.priceLabel}</td>
                   <td className="px-5 py-3">
                     <div className="flex flex-wrap gap-1.5">

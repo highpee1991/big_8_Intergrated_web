@@ -1,7 +1,7 @@
 // src/components/cards/industry-card.tsx
 //
-// Used on the homepage (no link — purely informational) and on /industries
-// (fully clickable — whole card links to /industries/{slug}). Pass `href` to
+// Used on the homepage (no link , purely informational) and on /industries
+// (fully clickable , whole card links to /industries/{slug}). Pass `href` to
 // make it a link; omit it to keep the old, non-clickable behavior.
 import * as React from "react";
 import Link from "next/link";

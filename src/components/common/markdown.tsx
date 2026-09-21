@@ -2,7 +2,7 @@
 //
 // Renders Markdown (bold, bullet/numbered lists, italics, paragraphs) using
 // the site's own design tokens instead of react-markdown's unstyled
-// defaults. Used for product descriptions — admins write **bold** and
+// defaults. Used for product descriptions , admins write **bold** and
 // "* bullet" lists in the admin form's Description field exactly like any
 // other Markdown, and this is what actually turns that into real
 // formatting instead of showing literal asterisks.

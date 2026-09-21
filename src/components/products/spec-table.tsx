@@ -1,7 +1,7 @@
 // src/components/products/spec-table.tsx
 //
 // Renders a product's `specs` Json field as a clean key/value list. Works for
-// any product category — a forklift's specs (Lift Capacity, Engine) and a
+// any product category , a forklift's specs (Lift Capacity, Engine) and a
 // valve's specs (Pressure Rating, Material) both render the same way, since
 // neither is a fixed column.
 export interface SpecTableProps {

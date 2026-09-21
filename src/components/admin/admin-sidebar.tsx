@@ -1,6 +1,6 @@
 // src/components/admin/admin-sidebar.tsx
 //
-// Left nav for the whole /admin section. Collapsible — wide tables (like
+// Left nav for the whole /admin section. Collapsible , wide tables (like
 // the products list) need the room, so the collapsed state persists across
 // visits via localStorage rather than resetting every page load.
 "use client";

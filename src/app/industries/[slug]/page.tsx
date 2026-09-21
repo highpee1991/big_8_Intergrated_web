@@ -1,6 +1,6 @@
 // src/app/industries/[slug]/page.tsx
 //
-// Single dynamic segment (not a catch-all) — unlike Products, Industries
+// Single dynamic segment (not a catch-all) , unlike Products, Industries
 // nav has no second-level sub-menu, so every industry page is exactly
 // /industries/{division-slug}.
 import type { Metadata } from "next";
@@ -33,7 +33,7 @@ export async function generateMetadata({
   if (!division) return {};
 
   return {
-    title: `${division.name} | Big 8 Intergrated, LLC`,
+    title: `${division.name} | Big 8 Intergrated LLC`,
     description: division.description,
   };
 }
@@ -125,7 +125,7 @@ export default async function IndustrySlugPage({
           </div>
         ) : (
           <p className="text-ink-muted">
-            No products listed for this division yet — reach out and we&apos;ll help source what
+            No products listed for this division yet , reach out and we&apos;ll help source what
             you need.
           </p>
         )}

@@ -1,6 +1,6 @@
 // src/features/products/components/product-filters-bar.tsx
 //
-// Filter controls for /products — Division, Category (scoped to the
+// Filter controls for /products , Division, Category (scoped to the
 // selected division), Brand, and a text search. Reads/writes the shared
 // Zustand store; the actual filtering happens in filtered-product-grid.tsx,
 // which subscribes to the same store.
@@ -14,7 +14,7 @@ import { Button } from "@/components/ui/button";
 import type { Category } from "@/types/content";
 
 export interface ProductFiltersBarProps {
-  // Deliberately NOT the full Division type — Division.icon is a component
+  // Deliberately NOT the full Division type , Division.icon is a component
   // (LucideIcon), and Server Components cannot pass functions/components as
   // props into Client Components like this one. Only plain, serializable
   // data crosses that boundary, so this only takes what the dropdown
@@ -22,7 +22,7 @@ export interface ProductFiltersBarProps {
   divisions: Array<{ slug: string; name: string }>;
   categories: Category[];
   brands: Array<{ slug: string; name: string }>;
-  /** From ?q= on /products — set once, from the header search redirect. */
+  /** From ?q= on /products , set once, from the header search redirect. */
   initialSearch?: string;
 }
 
@@ -37,7 +37,7 @@ function ProductFiltersBar({
 
   React.useEffect(() => {
     if (initialSearch) setSearch(initialSearch);
-    // Only ever apply the URL's initial value once, on mount — not on
+    // Only ever apply the URL's initial value once, on mount , not on
     // every render, or it would fight with the user typing.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

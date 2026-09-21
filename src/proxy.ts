@@ -1,10 +1,10 @@
 // src/proxy.ts
 //
 // Next.js 16 renamed middleware.ts -> proxy.ts (and the exported function
-// middleware -> proxy) — this is intentionally NOT named middleware.ts.
+// middleware -> proxy) , this is intentionally NOT named middleware.ts.
 // Runs on every /admin/* request: refreshes the Supabase session and
 // redirects unauthenticated visitors to /admin/login, before any admin
-// page or Server Action even runs. This is the real security boundary —
+// page or Server Action even runs. This is the real security boundary ,
 // individual admin pages/actions should still check auth themselves too
 // (defense in depth), not rely on this alone.
 import { createServerClient } from "@supabase/ssr";

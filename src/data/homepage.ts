@@ -31,7 +31,7 @@ export const whyChooseUsPoints: WhyChooseUsPoint[] = [
     icon: Layers,
     title: "One Partner, Eight Capabilities",
     description:
-      "A single point of contact across oil & gas, heavy equipment, medical, IT, and more — no juggling separate vendors per category.",
+      "A single point of contact across oil & gas, heavy equipment, medical, IT, and more , no juggling separate vendors per category.",
   },
   {
     id: "public-private",

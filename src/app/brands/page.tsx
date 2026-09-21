@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { ComingSoon } from "@/components/common/coming-soon";
 
-export const metadata: Metadata = { title: "Brands | Big 8 Intergrated, LLC" };
+export const metadata: Metadata = { title: "Brands | Big 8 Intergrated LLC" };
 
 export default function BrandsPage() {
   return (

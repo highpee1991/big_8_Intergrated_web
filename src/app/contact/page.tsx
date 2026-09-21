@@ -7,9 +7,9 @@ import { Reveal } from "@/components/common/reveal";
 import { ContactForm } from "@/features/contact/components/contact-form";
 
 export const metadata: Metadata = {
-  title: "Contact Us | Big 8 Intergrated, LLC",
+  title: "Contact Us | Big 8 Intergrated LLC",
   description:
-    "Get in touch with Big 8 Intergrated, LLC — request a quote or ask a question about any of our eight divisions.",
+    "Get in touch with Big 8 Intergrated LLC, request a quote or ask a question about any of our eight divisions.",
 };
 
 export default async function ContactPage() {
@@ -20,7 +20,7 @@ export default async function ContactPage() {
       <PageHeader
         eyebrow="Contact Us"
         title="Let's talk about what you need"
-        description="Whether it's a quote, a question, or a custom-sourced part, our team responds directly — no ticket queue."
+        description="Whether it's a quote, a question, or a custom-sourced part, our team responds directly, no ticket queue."
       />
 
       <Section tone="paper">

@@ -9,7 +9,7 @@ export interface SectionProps extends React.HTMLAttributes<HTMLElement> {
   /** Vertical padding scale. */
   spacing?: "sm" | "md" | "lg";
   containerWidth?: ContainerProps["width"];
-  /** Skip the inner Container — use when the section needs full-bleed content. */
+  /** Skip the inner Container , use when the section needs full-bleed content. */
   noContainer?: boolean;
 }
 

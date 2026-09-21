@@ -6,7 +6,7 @@ import { Reveal } from "@/components/common/reveal";
 import { IndustryCard } from "@/components/cards/industry-card";
 import { getDivisions } from "@/lib/services/industries.service";
 
-export const metadata: Metadata = { title: "Industries We Serve | Big 8 Intergrated, LLC" };
+export const metadata: Metadata = { title: "Industries We Serve | Big 8 Intergrated LLC" };
 
 export default async function IndustriesPage() {
   const divisions = await getDivisions();

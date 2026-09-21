@@ -1,7 +1,7 @@
 // src/components/cards/product-card.tsx
 //
 // Reusable product card used on the homepage, /products, and /industries/[slug].
-// The ENTIRE card is a single Link to the product's detail page — no separate
+// The ENTIRE card is a single Link to the product's detail page , no separate
 // "View details" link inside it. Takes a ProductSummary directly so callers
 // never have to unpack/rename fields.
 import Link from "next/link";

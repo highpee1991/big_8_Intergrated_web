@@ -1,6 +1,6 @@
 // src/components/layout/header-search.tsx
 //
-// Persistent search entry point, visible in the header on every page —
+// Persistent search entry point, visible in the header on every page ,
 // not just on /products. Expands from an icon into an input on click,
 // submits by navigating to /products?q=<value>, where the filter bar
 // picks up the query param and applies it as the initial search term.

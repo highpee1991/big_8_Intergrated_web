@@ -14,7 +14,7 @@ function AboutSection({ company }: AboutSectionProps) {
         <div className="max-w-2xl">
           <SectionHeader
             eyebrow="About Us"
-            title={`${company.legalName} — ${company.city}, ${company.state}`}
+            title={`${company.legalName}, ${company.city}, ${company.state}`}
             description={company.description}
           />
         </div>

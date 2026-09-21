@@ -1,7 +1,7 @@
 // src/components/products/product-gallery.tsx
 //
-// Main image + clickable thumbnail strip. Works with any number of images —
-// 1 or 30 — since `images` always comes from the ProductImage relation,
+// Main image + clickable thumbnail strip. Works with any number of images ,
+// 1 or 30 , since `images` always comes from the ProductImage relation,
 // never a fixed set of columns. Thumbnails only render when there's more
 // than one image to switch between.
 "use client";

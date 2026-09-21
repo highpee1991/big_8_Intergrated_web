@@ -7,13 +7,13 @@ import { motion as motionTokens } from "@/config/theme";
 export interface RevealProps {
   children: React.ReactNode;
   className?: string;
-  /** Stagger delay in seconds — pass an increasing value across siblings
+  /** Stagger delay in seconds , pass an increasing value across siblings
    *  for a staggered reveal instead of all children animating at once. */
   delay?: number;
 }
 
 /**
- * Shared scroll-reveal wrapper — every section uses this instead of
+ * Shared scroll-reveal wrapper , every section uses this instead of
  * hand-rolling its own Framer Motion variant. Motion should whisper: a
  * short fade + 16px rise, once, respecting prefers-reduced-motion via
  * Framer Motion's built-in handling.

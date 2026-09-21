@@ -2,7 +2,7 @@
 //
 // Client-side filter state for the /products grid. Deliberately simple:
 // four fields, four setters, one reset. Filtering itself happens in the
-// component that reads this store (useFilteredProducts) — this store only
+// component that reads this store (useFilteredProducts) , this store only
 // holds "what's currently selected," nothing else.
 "use client";
 

@@ -2,7 +2,7 @@
 //
 // Renders the /products grid, filtered client-side against the shared
 // Zustand store. Client-side filtering (not a server round-trip per
-// change) is the right call at this catalog size — instant feedback,
+// change) is the right call at this catalog size , instant feedback,
 // no loading spinner between keystrokes. Revisit if the catalog grows
 // into the hundreds/thousands of products.
 "use client";
@@ -38,7 +38,7 @@ function FilteredProductGrid({ products }: FilteredProductGridProps) {
   if (filtered.length === 0) {
     return (
       <p className="py-12 text-center text-ink-muted">
-        No products match your filters — try clearing one or two.
+        No products match your filters , try clearing one or two.
       </p>
     );
   }

@@ -1,7 +1,7 @@
 // src/components/ui/select.tsx
 //
 // A plain native <select>, styled to match Input exactly. Deliberately not
-// a Radix/custom-dropdown component — a native select is fully accessible,
+// a Radix/custom-dropdown component , a native select is fully accessible,
 // works with keyboards and screen readers for free, and needs zero extra
 // dependencies. Reach for this anywhere a simple single-choice dropdown is
 // needed; build something fancier only if a specific design calls for it.

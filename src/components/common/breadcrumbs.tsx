@@ -1,7 +1,7 @@
 // src/components/common/breadcrumbs.tsx
 //
 // Reusable across product detail pages, category listings, and (later)
-// industry pages — anywhere a "Home / Section / Current page" trail is needed.
+// industry pages , anywhere a "Home / Section / Current page" trail is needed.
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 
